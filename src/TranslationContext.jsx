@@ -12,8 +12,14 @@ const TranslationContext = createContext({
 });
 
 export const TranslationProvider = ({ children }) => {
-  const defaultLang =
-    localStorage.getItem("lang") || localStorage.setItem("lang", "en") || "fr";
+  let defaultLang = "fr";
+
+  if (typeof window !== "undefined") {
+    defaultLang =
+      localStorage.getItem("lang") ||
+      (localStorage.setItem("lang", "en"), "en");
+  }
+
 
   const [lang, setLang] = useState(defaultLang);
 
