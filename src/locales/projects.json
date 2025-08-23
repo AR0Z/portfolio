@@ -1,0 +1,24 @@
+[
+  {
+    "id": "portfolio",
+    "title": {
+      "en": "Portfolio",
+      "fr": "Portfolio"
+    },
+    "description": {
+      "en": "My personal portfolio website showcasing my projects and skills.",
+      "fr": "Mon site portfolio personnel présentant mes projets et compétences."
+    }
+  },
+  {
+    "id": "Smartcities",
+    "title": {
+      "en": "Smart Cities",
+      "fr": "Villes Intelligentes"
+    },
+    "description": {
+      "en": "A project focused on developing smart city solutions using IoT and data analytics.",
+      "fr": "Un projet axé sur le développement de solutions pour les villes intelligentes utilisant l'IoT et l'analyse de données."
+    }
+  }
+]

@@ -1,0 +1,54 @@
+/* Regular */
+@font-face {
+  font-family: "ClashDisplay-Regular";
+  src: url("./assets/fonts/ClashDisplay-Regular.woff2") format("woff2"),
+    url("./assets/fonts/ClashDisplay-Regular.woff") format("woff");
+}
+
+/* Bold */
+@font-face {
+  font-family: "ClashDisplay-Bold";
+  src: url("./assets/fonts/ClashDisplay-Bold.woff2") format("woff2"),
+    url("./assets/fonts/ClashDisplay-Bold.woff") format("woff");
+}
+
+/* Semibold */
+@font-face {
+  font-family: "ClashDisplay-Semibold";
+  src: url("./assets/fonts/ClashDisplay-Semibold.woff2") format("woff2"),
+    url("./assets/fonts/ClashDisplay-Semibold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("./assets/fonts/helvetica-light.woff") format("woff");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  overflow-x: hidden;
+  background: url("./assets/bg.png") center/cover no-repeat fixed;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 1.5rem;
+}
