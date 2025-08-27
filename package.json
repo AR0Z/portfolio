@@ -2,12 +2,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "flag-icons": "^7.5.0",
+    "path": "^0.12.7",
     "preact": "^10.26.9",
     "preact-iso": "^2.10.0",
     "preact-render-to-string": "^6.6.1",

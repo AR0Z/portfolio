@@ -7,32 +7,31 @@ import {
 } from "preact-iso";
 
 // pages
-import { Home } from "./pages/Home/index.jsx";
-import { NotFound } from "./pages/_404.jsx";
-import { Project } from "./pages/Project/index.jsx";
+import { Home } from "@/pages/Home/index.jsx";
+import { NotFound } from "@/pages/_404.jsx";
+import { Project } from "@/pages/Project/index.jsx";
 
 // components
-import { Header } from "./components/Header.jsx";
-import { ParticlesBackground } from "./components/ParticlesBackground"; // extension retirée
+import { Header } from "@/components/Header.jsx";
+import { ParticlesBackground } from "@/components/ParticlesBackground"; 
+import { Footer } from "@/components/Footer.jsx";
 // context
-import { TranslationProvider } from "./TranslationContext.jsx";
+import { TranslationProvider } from "@/TranslationContext.jsx";
 
 // styles
-import "./style.scss";
-import "flag-icons/css/flag-icons.min.css";
+import "@/style.scss";
 
 export function App() {
   return (
     <TranslationProvider>
       <LocationProvider>
         <Header />
-        <main>
           <Router>
             <Route path="/" component={Home} />
             <Route path="/project/:id" component={Project} />
             <Route default component={NotFound} />
           </Router>
-        </main>
+          <Footer />
         <ParticlesBackground />
       </LocationProvider>
     </TranslationProvider>

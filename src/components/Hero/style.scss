@@ -1,0 +1,64 @@
+@use "../../variables.scss" as *;
+
+.Hero {
+  min-height: 100vh;
+  background: url("../../assets/bg.png") center top no-repeat;
+  background-size: contain; /* s’adapte mais garde proportions */
+  min-height: 100vh;
+  overflow: visible;
+  margin: 0;
+  &__Title {
+    font-family: "ClashDisplay-Semibold";
+    padding: 240px 220px 200px 220px;
+    h1,
+    h2 {
+      font-size: 6rem;
+    }
+  }
+
+  &__Subtitle {
+    font-size: 2.25rem;
+    font-family: "Poppins-ExtraLight";
+    color: $primary-color;
+    position: relative;
+
+    span {
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 107px;
+        height: 56px;
+        background: url("../../assets/underline.svg");
+        position: absolute;
+        bottom: -70px;
+        right: 0;
+      }
+    }
+  }
+
+  &__SocialLinks {
+    display: flex;
+    justify-content: right;
+    gap: 40px;
+    margin-right: 100px;
+
+    .Link {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 15px 20px;
+      border: 1px solid $primary-color;
+      border-radius: 30px;
+      font-family: "Poppins-ExtraLight";
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: $secondary-color;
+
+      &:hover {
+        background: $primary-color;
+        color: $background-color;
+      }
+    }
+  }
+}

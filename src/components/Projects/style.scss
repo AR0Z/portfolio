@@ -1,0 +1,50 @@
+@use "../../variables.scss" as *;
+
+.Projects {
+  margin: 200px 280px 50px 280px;
+
+  &__Title {
+    font-family: "Poppins-ExtraLight";
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    position: relative;
+    height: 4rem;
+    span {
+    display: inline-block;
+      padding: 20px;
+      border: 1px solid $primary-color;
+      border-radius: 30px;
+    position: absolute;
+    }
+
+    :nth-child(1) {
+      transform: rotate(15deg);
+      top: -4rem;
+      left: 3rem;
+    }
+
+    :nth-child(2) {
+        padding: 20px 30px;
+        top: 0;
+        left: 0;
+    }
+
+    :nth-child(3) {
+        top: 4rem;
+        left: 4rem;
+    }
+  }
+
+  &__Container {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    span {
+      font-family: "Poppins-ExtraLight";
+      font-size: 3rem;
+      letter-spacing: 2rem;
+      color: $secondary-color;
+    }
+  }
+}

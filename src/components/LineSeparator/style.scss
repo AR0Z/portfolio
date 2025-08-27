@@ -1,0 +1,13 @@
+@use "../../variables.scss" as *;
+.LineSeparator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  .Line {
+    display: block;
+    height: 200px;
+    background-color: $secondary-color;
+    width: 1px;
+  }
+}

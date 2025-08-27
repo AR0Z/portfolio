@@ -1,0 +1,73 @@
+@use "../../variables.scss" as *;
+@use "sass:color";
+
+.About {
+  margin: 100px 280px;
+  &__Description {
+    font-family: "Poppins-Semibold";
+    font-size: 1.5rem;
+
+    .highlight {
+      font-family: "Poppins-Bold";
+      color: $primary-color;
+    }
+  }
+}
+
+.Skills {
+  margin-top: 100px;
+  &__Title {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    h3 {
+      font-family: "OverTheRainbow";
+      font-size: 2.25rem;
+      position: relative;
+      color: $primary-color;
+    }
+
+    img {
+      width: 200px;
+      position: absolute;
+      top: 4rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__Container {
+    margin-left: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    width: 300px;
+    svg {
+      width: 100px;
+      height: 100px;
+      color: $primary-color;
+    }
+
+    &-text {
+      font-family: "Poppins-ExtraLight";
+      margin-top: 50px;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      color: $secondary-color;
+
+      a {
+        font-family: "OverTheRainbow";
+        color: $primary-color;
+        text-decoration: underline;
+
+        &:hover {
+          color: color.adjust($primary-color, $lightness: -10%);
+        }
+      }
+    }
+  }
+}

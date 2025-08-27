@@ -9,7 +9,7 @@ interface Particle {
   vy: number;
 }
 
-// Arrière-plan de particules avec links (implémentation custom, aucune dépendance externe)
+// Arrière-plan de particules avec liens (implémentation custom, aucune dépendance externe)
 export function ParticlesBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -18,6 +18,9 @@ export function ParticlesBackground() {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+
+    // Variable d'opacité des particules
+    const PARTICLE_OPACITY = 0.2; // Modifier cette valeur pour ajuster l'opacité des particules (0 = transparent, 1 = opaque)
 
     let particles: Particle[] = [];
     let animationId: number;
@@ -52,7 +55,7 @@ export function ParticlesBackground() {
       linkWidth: 1,
       maxSpeed: 0.45,
       particleSize: { min: 0.3, max: 2 },
-      particleColor: "#ffffff",
+      particleColor: "#E4E2DC",
       smoothAdjustBatch: 60, // nombre max de particules ajoutées / retirées par frame
     } as const;
 
@@ -65,7 +68,9 @@ export function ParticlesBackground() {
       const prevH = height;
       width = window.innerWidth;
       height = window.innerHeight;
-      dpr = window.devicePixelRatio || 1;
+      // Effet pixelisé sur mobile : on force dpr à 1 si petit écran
+      const isMobile = window.innerWidth < 700;
+      dpr = isMobile ? 1 : window.devicePixelRatio || 1;
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       canvas.width = width * dpr;
       canvas.height = height * dpr;
@@ -182,7 +187,28 @@ export function ParticlesBackground() {
       // Draw particles
       for (const p of particles) {
         const size = rand(CONFIG.particleSize.min, CONFIG.particleSize.max);
-        ctx.fillStyle = CONFIG.particleColor;
+        // Utilise la couleur de particule avec opacité
+        let color: string = CONFIG.particleColor;
+        if (color.startsWith("#")) {
+          // Convertit la couleur hexadécimale en rgba
+          const hex = color.replace("#", "");
+          const bigint = parseInt(hex, 16);
+          const r = (bigint >> 16) & 255;
+          const g = (bigint >> 8) & 255;
+          const b = bigint & 255;
+          color = `rgba(${r},${g},${b},${PARTICLE_OPACITY})`;
+        } else if (color.startsWith("rgb(")) {
+          color = color
+            .replace("rgb(", "rgba(")
+            .replace(")", `,${PARTICLE_OPACITY})`);
+        } else if (color.startsWith("rgba(")) {
+          // Remplace l'opacité existante
+          color = color.replace(
+            /rgba\((\d+),(\d+),(\d+),[^)]+\)/,
+            `rgba($1,$2,$3,${PARTICLE_OPACITY})`
+          );
+        }
+        ctx.fillStyle = color;
         ctx.beginPath();
         ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
         ctx.fill();
@@ -224,7 +250,7 @@ export function ParticlesBackground() {
       style={{
         position: "fixed",
         inset: 0,
-        zIndex: -1,
+        zIndex: 0,
         pointerEvents: "none",
       }}
     />

@@ -1,4 +1,11 @@
 {
-    "title":"Développeur Full Stack",
-    "description":"Salut, je suis Germain, j’ai 23 ans ! Récemment diplômé en développement d’applications web à Henallux, je suis passionné par l’informatique depuis toujours. J’aime autant jouer aux jeux vidéo que développer des outils et des applications, que ce soit pour automatiser des tâches ou simplement donner vie à mes idées.\n\nCurieux et motivé, j’adore apprendre de nouvelles technologies et relever de nouveaux défis. Mon objectif est simple : continuer à progresser, transformer ma créativité en projets concrets et partager ma passion du développement avec les autres."
+  "title": "Développeur Full <span>Stack</span>",
+  "about": "Hey ! Moi c’est Germain, 23 ans, fraîchement diplômé en développement d’applications web à Henallux. <span class=\"highlight\">Passionné</span> d’informatique depuis toujours, je prends autant de plaisir à explorer de nouveaux jeux vidéo qu’à créer des outils que ce soit pour automatiser des petites tâches du quotidien ou donner vie à des idées un peu folles.<br /><span class=\"highlight\">Curieux</span>, <span class=\"highlight\">motivé</span> et toujours partant pour découvrir de nouvelles technos, j’aime relever des défis et transformer ma créativité en projets concrets. Mon objectif ? Continuer à <span class=\"highlight\">apprendre</span>, <span class=\"highlight\">coder</span>, <span class=\"highlight\">expérimenter</span>… et surtout <span class=\"highlight\">partager</span> ma passion du développement avec les autres.",
+  "skillsMore": "Pour voir la liste complète, rendez-vous sur mon <a href=\"https://github.com/AR0Z\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a>.",
+  "projects-first": "TOUS",
+  "projects-second": "MES",
+  "projects-third": "PROJETS",
+  "projects-soon": "BIENTÔT...",
+  "contact-title": "Contactez-moi",
+  "footer": "Design réalisé par <a href=\"https://emma-deltenre.be/\" target=\"_blank\" rel=\"noopener noreferrer\">EMMA</a>."
 }

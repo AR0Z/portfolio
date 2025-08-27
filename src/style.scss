@@ -1,27 +1,42 @@
-/* Regular */
+@use "./variables.scss" as *;
+
+/* ClashDisplay */
 @font-face {
   font-family: "ClashDisplay-Regular";
-  src: url("./assets/fonts/ClashDisplay-Regular.woff2") format("woff2"),
-    url("./assets/fonts/ClashDisplay-Regular.woff") format("woff");
+  src: url("./assets/font/ClashDisplay-Regular.woff2") format("woff2"),
+    url("./assets/font/ClashDisplay-Regular.woff") format("woff");
 }
-
-/* Bold */
 @font-face {
   font-family: "ClashDisplay-Bold";
-  src: url("./assets/fonts/ClashDisplay-Bold.woff2") format("woff2"),
-    url("./assets/fonts/ClashDisplay-Bold.woff") format("woff");
+  src: url("./assets/font/ClashDisplay-Bold.woff2") format("woff2"),
+    url("./assets/font/ClashDisplay-Bold.woff") format("woff");
 }
-
-/* Semibold */
 @font-face {
   font-family: "ClashDisplay-Semibold";
-  src: url("./assets/fonts/ClashDisplay-Semibold.woff2") format("woff2"),
-    url("./assets/fonts/ClashDisplay-Semibold.woff") format("woff");
+  src: url("./assets/font/ClashDisplay-Semibold.woff2") format("woff2"),
+    url("./assets/font/ClashDisplay-Semibold.woff") format("woff");
 }
 
+/* Poppins */
+
 @font-face {
-  font-family: "Helvetica";
-  src: url("./assets/fonts/helvetica-light.woff") format("woff");
+  font-family: "Poppins-Bold";
+  src: url("./assets/font/Poppins-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins-ExtraLight";
+  src: url("./assets/font/Poppins-ExtraLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("./assets/font/Poppins-SemiBold.ttf") format("truetype");
+}
+
+/*  OverTheRainbow */
+
+@font-face {
+  font-family: "OverTheRainbow";
+  src: url("./assets/font/OvertheRainbow-Regular.ttf") format("truetype");
 }
 
 html {
@@ -41,14 +56,74 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212;
-  color: #ffffff;
+  background-color: $background-color;
+  color: $secondary-color;
   overflow-x: hidden;
-  background: url("./assets/bg.png") center/cover no-repeat fixed;
 }
 
 .nav {
+  width: calc(100vw - 3rem);
+  position: fixed;
   display: flex;
   justify-content: space-between;
   margin: 1rem 1.5rem;
+
+  .lang {
+    font-family: "ClashDisplay-Semibold";
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    .separator {
+      color: $primary-color;
+      font-family: "ClashDisplay-Regular";
+    }
+
+    .selector {
+      cursor: pointer;
+      color: $primary-color;
+
+      &.active {
+        color: $secondary-color;
+      }
+    }
+
+    &::after {
+      content: "";
+      width: 25px;
+      height: 12px;
+      background: url("./assets/selector.svg") no-repeat center/contain;
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      transition: transform 0.3s ease; 
+    }
+
+    &.fr-active::after {
+      transform: translateX(0); 
+    }
+
+    &.en-active::after {
+      transform: translateX(39px); 
+    }
+  }
+}
+
+footer {
+  margin: 100px 0 100px 0;
+  text-align: center;
+  font-family: "Poppins-ExtraLight";
+  color: $secondary-color;
+  font-size: 1rem;
+
+  a {
+    font-family: "OverTheRainbow";
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
