@@ -7,9 +7,9 @@ import {
 } from "preact-iso";
 
 // pages
-import { Home } from "@/pages/Home/index.jsx";
+import { Home } from "@/pages/Home";
 import { NotFound } from "@/pages/_404.jsx";
-import { Project } from "@/pages/Project/index.jsx";
+import { Project } from "@/pages/Project";
 
 // components
 import { Header } from "@/components/Header.jsx";

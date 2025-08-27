@@ -59,6 +59,8 @@ body {
   background-color: $background-color;
   color: $secondary-color;
   overflow-x: hidden;
+  max-width: 1920px;
+  margin: auto;
 }
 
 .nav {

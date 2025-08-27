@@ -11,6 +11,11 @@ html {
     margin-left: 0px;
     margin-top: 200px;
   }
+  .Contact {
+    p {
+      font-size: 2rem;
+    }
+  }
 }
 
 @media (max-width: 900px) {
@@ -85,23 +90,23 @@ html {
 
   .Projects {
     margin: 100px 40px 100px 40px;
-      &__Title {
-        :nth-child(1) {
-          transform: rotate(15deg);
-          top: -5rem;
-          left: 3rem;
-        }
-
-        :nth-child(2) {
-          top: 0;
-          left: 0;
-        }
-
-        :nth-child(3) {
-          top: 5rem;
-          left: 5rem;
-        }
+    &__Title {
+      :nth-child(1) {
+        transform: rotate(15deg);
+        top: -5rem;
+        left: 3rem;
       }
+
+      :nth-child(2) {
+        top: 0;
+        left: 0;
+      }
+
+      :nth-child(3) {
+        top: 5rem;
+        left: 5rem;
+      }
+    }
   }
 
   .Contact {
@@ -139,5 +144,4 @@ html {
   .Projects {
     margin: 100px 40px 100px 40px;
   }
-
 }
