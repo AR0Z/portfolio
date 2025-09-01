@@ -4,6 +4,8 @@ import preact from '@preact/preset-vite';
 import { fileURLToPath } from 'url'
 import { dirname, resolve } from 'path'
 
+import projects from "./src/locales/projects.json";
+
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
@@ -14,9 +16,10 @@ export default defineConfig({
 			prerender: {
 				enabled: true,
 				renderTarget: '#app',
-				additionalPrerenderRoutes: ['/404'],
+				additionalPrerenderRoutes: ['/404', ...projects.map(p => `/projects/${p.id}`)],
 				previewMiddlewareEnabled: true,
 				previewMiddlewareFallback: '/404',
+				
 			},
 		}),
 	],

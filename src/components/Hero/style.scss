@@ -2,12 +2,21 @@
 
 .Hero {
   min-height: 100vh;
-  background: url("../../assets/bg.png") center top no-repeat;
-  background-size: contain; /* s’adapte mais garde proportions */
-  min-height: 100vh;
+  background: url("../../assets/bg.png") right top no-repeat;
+  background-size: auto; /* s’adapte mais garde proportions */
   overflow: visible;
   margin: 0;
+  min-width: 100%;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  width: 100vw; /* plein écran */
   &__Title {
+    margin: auto;
+    max-width: 1920px;
     font-family: "ClashDisplay-Semibold";
     padding: 240px 220px 200px 220px;
     h1,
@@ -42,7 +51,6 @@
     justify-content: right;
     gap: 40px;
     margin-right: 100px;
-
     .Link {
       display: flex;
       gap: 10px;
