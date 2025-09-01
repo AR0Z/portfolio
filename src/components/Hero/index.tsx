@@ -3,7 +3,7 @@ import "./style.scss";
 
 import { SocialLinks } from "./SocialLinks";
 
-export function Hero() {
+export default function Hero() {
   const { t } = useTranslation();
   return (
     <section className="Hero">

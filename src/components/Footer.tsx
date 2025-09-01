@@ -7,6 +7,7 @@ export function Footer() {
     <footer>
       <p>© Germain Duchêne - {new Date().getFullYear()}</p>
       <p dangerouslySetInnerHTML={{ __html: t("footer") }} />
+      <p dangerouslySetInnerHTML={{ __html: t("github") }} />
     </footer>
   );
 }

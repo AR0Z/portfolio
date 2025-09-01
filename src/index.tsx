@@ -13,7 +13,7 @@ import { Project } from "@/pages/Project";
 
 // components
 import { Header } from "@/components/Header.jsx";
-import { ParticlesBackground } from "@/components/ParticlesBackground"; 
+import { ParticlesBackground } from "@/components/ParticlesBackground";
 import { Footer } from "@/components/Footer.jsx";
 // context
 import { TranslationProvider } from "@/TranslationContext.jsx";
@@ -26,12 +26,14 @@ export function App() {
     <TranslationProvider>
       <LocationProvider>
         <Header />
+        <main>
           <Router>
             <Route path="/" component={Home} />
             <Route path="/project/:id" component={Project} />
             <Route default component={NotFound} />
           </Router>
-          <Footer />
+        </main>
+        <Footer />
         <ParticlesBackground />
       </LocationProvider>
     </TranslationProvider>

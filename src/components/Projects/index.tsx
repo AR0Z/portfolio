@@ -1,8 +1,17 @@
 import { useTranslation } from "@/TranslationContext";
 import "./style.scss";
+import projectsDataRaw from "@/locales/projects.json";
 
-export function Projects() {
-  const { t } = useTranslation();
+
+
+export default function Projects() {
+  const { t, lang } = useTranslation();
+
+  const projectsData: Array<{ id: string; [key: string]: any }> = Array.isArray(
+  projectsDataRaw
+)
+  ? projectsDataRaw
+  : [];
 
   return (
     <section className="Projects">
@@ -13,7 +22,15 @@ export function Projects() {
       </div>
 
       <div className="Projects__Container">
-        <span>{t("projects-soon")}</span>
+        {projectsData.map((project) => (
+          <div key={project.id} className="Projects__Item">
+            <h3 className={"Projects__Item__Title"}>{project.title[lang]}</h3>
+
+            <a href={`project/${project.id}`} className={"Projects__Item__Link"}>
+              <img src={project.image} alt="" />
+            </a>
+          </div>
+        ))}
       </div>
     </section>
   );

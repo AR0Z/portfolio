@@ -2,8 +2,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "copy-404": "node scripts/copy404.js",
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "vite build && npm run copy-404",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.10.2",
+    "@types/node": "^24.3.0",
     "eslint": "^9.34.0",
     "eslint-config-preact": "^2.0.0",
     "sass": "^1.90.0",

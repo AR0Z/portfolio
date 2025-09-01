@@ -11,11 +11,11 @@
     position: relative;
     height: 4rem;
     span {
-    display: inline-block;
+      display: inline-block;
       padding: 20px;
       border: 1px solid $primary-color;
       border-radius: 30px;
-    position: absolute;
+      position: absolute;
     }
 
     :nth-child(1) {
@@ -25,26 +25,67 @@
     }
 
     :nth-child(2) {
-        padding: 20px 30px;
-        top: 0;
-        left: 0;
+      padding: 20px 30px;
+      top: 0;
+      left: 0;
     }
 
     :nth-child(3) {
-        top: 4rem;
-        left: 4rem;
+      top: 4rem;
+      left: 4rem;
     }
   }
 
   &__Container {
-    margin-top: 200px;
     display: flex;
-    justify-content: center;
-    span {
-      font-family: "Poppins-ExtraLight";
-      font-size: 3rem;
-      letter-spacing: 2rem;
-      color: $secondary-color;
+    flex-direction: column;
+    margin-top: 200px;
+  }
+
+  &__Item {
+    position: relative;
+    max-width: 580px;
+    width: 100%;
+    height: 490px;
+    margin-bottom: 50px;
+    border-radius: 40px;
+    &:nth-child(odd) {
+      background: linear-gradient(to left, $primary-color, $background-color);
+      transform: rotate(-10deg);
+    }
+
+    &:nth-child(even) {
+      background: linear-gradient(to left, $background-color, $primary-color);
+       margin-left: auto;
+       transform: rotate(10deg);
+    }
+
+    &:nth-child(odd) &__Title {
+      right: 40px;
+    }
+
+    &:nth-child(even) &__Title {
+      left: 40px;
+    }
+
+    &__Title {
+      position: absolute;
+      font-family: "ClashDisplay-Regular";
+      font-size: 2rem;
+      bottom: 3px;
+    }
+
+    &__Link {
+      img {
+        position: absolute;
+        width: calc(100% - 50px);
+        height: auto;
+        border-radius: 40px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+      }
     }
   }
 }

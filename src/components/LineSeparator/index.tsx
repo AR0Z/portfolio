@@ -1,6 +1,6 @@
 import "./style.scss";
 
-export function LineSeparator() {
+export default function LineSeparator() {
   return (
     <div className="LineSeparator">
       <span className="Line"></span>

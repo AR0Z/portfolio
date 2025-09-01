@@ -1,6 +1,6 @@
-import { useTranslation } from "../../TranslationContext.jsx";
+import { useTranslation } from "@/TranslationContext.jsx";
 import "./style.scss";
-import projectsDataRaw from "../../locales/projects.json";
+import projectsDataRaw from "@/locales/projects.json";
 
 const projectsData: Array<{ id: string; [key: string]: any }> = Array.isArray(
   projectsDataRaw

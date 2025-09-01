@@ -2,16 +2,29 @@ import { useTranslation } from "@/TranslationContext";
 import "./style.scss";
 import arrow from "@/assets/arrow.png";
 
-import {
-  SiReact,
-  SiAdonisjs,
-  SiDotnet,
-  SiSpring,
-  SiExpress,
-  SiSass,
-} from "react-icons/si";
+import { lazy, Suspense } from "preact/compat";
+import { Loader } from "../Loader";
 
-export function About() {
+const SiReact = lazy(() =>
+  import("react-icons/si").then((m) => ({ default: m.SiReact }))
+);
+const SiAdonisjs = lazy(() =>
+  import("react-icons/si").then((m) => ({ default: m.SiAdonisjs }))
+);
+const SiDotnet = lazy(() =>
+  import("react-icons/si").then((m) => ({ default: m.SiDotnet }))
+);
+const SiSpring = lazy(() =>
+  import("react-icons/si").then((m) => ({ default: m.SiSpring }))
+);
+const SiExpress = lazy(() =>
+  import("react-icons/si").then((m) => ({ default: m.SiExpress }))
+);
+const SiSass = lazy(() =>
+  import("react-icons/si").then((m) => ({ default: m.SiSass }))
+);
+
+export default function About() {
   const { t } = useTranslation();
 
   return (
@@ -28,12 +41,14 @@ export function About() {
           </h3>
         </div>
         <div className="Skills__Container">
-          <SiReact />
-          <SiAdonisjs />
-          <SiDotnet />
-          <SiSpring />
-          <SiExpress />
-          <SiSass />
+          <Suspense fallback={<Loader />}>
+            <SiReact />
+            <SiAdonisjs />
+            <SiDotnet />
+            <SiSpring />
+            <SiExpress />
+            <SiSass />
+          </Suspense>
         </div>
         <p
           className="Skills__Container-text"

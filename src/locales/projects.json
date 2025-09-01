@@ -1,24 +1,50 @@
 [
   {
-    "id": "portfolio",
+    "id": "my-tfe",
     "title": {
-      "en": "Portfolio",
-      "fr": "Portfolio"
+      "en": "FYP - Match IT",
+      "fr": "TFE - Match IT"
+    },
+     "type" : {
+      "fr": "Project Scolaire",
+      "en": "School Project"
     },
     "description": {
       "en": "My personal portfolio website showcasing my projects and skills.",
       "fr": "Mon site portfolio personnel présentant mes projets et compétences."
-    }
+    },
+    "image": "/tfe.png"
   },
   {
-    "id": "Smartcities",
+    "id": "carpool",
     "title": {
-      "en": "Smart Cities",
-      "fr": "Villes Intelligentes"
+      "en": "Carpool",
+      "fr": "Carpool"
+    },
+     "type" : {
+      "fr": "Project Scolaire",
+      "en": "School Project"
     },
     "description": {
       "en": "A project focused on developing smart city solutions using IoT and data analytics.",
       "fr": "Un projet axé sur le développement de solutions pour les villes intelligentes utilisant l'IoT et l'analyse de données."
-    }
+    },
+    "image": "/carpool.png"
+  },
+  {
+    "id": "eshop-furniture",
+    "title": {
+      "en": "Furniture Paradise",
+      "fr": "Furniture Paradise"
+    },
+    "description": {
+      "en": "An e-commerce platform for buying and selling furniture online.",
+      "fr": "Une plateforme de commerce électronique pour acheter et vendre des meubles en ligne."
+    },
+    "type" : {
+      "fr": "Project Scolaire",
+      "en": "School Project"
+    },
+    "image": "/e-shop-furniture.png"
   }
 ]

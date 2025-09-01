@@ -1,22 +1,31 @@
 import { useTranslation } from "@/TranslationContext.jsx";
+import { Suspense, lazy } from "preact/compat";
 
-import { Hero } from "@/components/Hero/";
-import { LineSeparator } from "@/components/LineSeparator/";
-import { About } from "@/components/About/";
-import { Projects } from "@/components/Projects/"; 
-import { Contact } from "@/components/Contact/";
+import { Loader } from "@/components/Loader";
+import LineSeparator from "@/components/LineSeparator";
+
+import Hero from "@/components/Hero/";
+import About from "@/components/About/";
+const Projects = lazy(() => import("@/components/Projects/"));
+const Contact = lazy(() => import("@/components/Contact/"));
 
 export function Home() {
   const { t } = useTranslation();
 
   return (
     <>
-      <Hero />
+      <Suspense fallback={<Loader />}>
+        <Hero />
+      </Suspense>
       <LineSeparator />
       <About />
-      <Projects />
+      <Suspense fallback={<Loader />}>
+        <Projects />
+      </Suspense>
       <LineSeparator />
-      <Contact />
+      <Suspense fallback={<Loader />}>
+        <Contact />
+      </Suspense>
     </>
   );
 }

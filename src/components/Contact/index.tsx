@@ -1,7 +1,7 @@
 import { useTranslation } from "@/TranslationContext";
 import "./style.scss";
 
-export function Contact() {
+export default function Contact() {
     const { t } = useTranslation();
 
     return (
