@@ -16,7 +16,7 @@ export default defineConfig({
 			prerender: {
 				enabled: true,
 				renderTarget: '#app',
-				additionalPrerenderRoutes: ['/404', ...projects.map(p => `/projects/${p.id}`)],
+				additionalPrerenderRoutes: ['/404', ...projects.map(p => `/project/${p.id}`)],
 				previewMiddlewareEnabled: true,
 				previewMiddlewareFallback: '/404',
 				
