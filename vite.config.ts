@@ -19,13 +19,30 @@ export default defineConfig({
 				additionalPrerenderRoutes: ['/404', ...projects.map(p => `/project/${p.id}`)],
 				previewMiddlewareEnabled: true,
 				previewMiddlewareFallback: '/404',
-				
+
 			},
 		}),
 	],
 	base: '/',
 	build: {
-		outDir: 'dist'
+		outDir: 'dist',
+		minify: 'esbuild', // par défaut, esbuild minifie le JS
+		cssCodeSplit: true, // sépare le CSS en plusieurs fichiers si possible
+		rollupOptions: {
+			output: {
+				chunkFileNames: 'assets/[name]-[hash].js',
+				entryFileNames: 'assets/[name]-[hash].js',
+				assetFileNames: 'assets/[name]-[hash].[ext]',
+				manualChunks(id) {
+					if (id.includes('node_modules')) {
+						if (id.includes('preact')) return 'preact';
+						if (id.includes('preact-iso')) return 'preact-iso';
+						if (id.includes('react-icons')) return 'react-icons';
+						return 'vendor';
+					}
+				}
+			}
+		}
 	},
 	resolve: {
 		alias: {

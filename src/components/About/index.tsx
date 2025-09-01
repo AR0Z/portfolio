@@ -5,24 +5,7 @@ import arrow from "@/assets/arrow.png";
 import { lazy, Suspense } from "preact/compat";
 import { Loader } from "../Loader";
 
-const SiReact = lazy(() =>
-  import("react-icons/si").then((m) => ({ default: m.SiReact }))
-);
-const SiAdonisjs = lazy(() =>
-  import("react-icons/si").then((m) => ({ default: m.SiAdonisjs }))
-);
-const SiDotnet = lazy(() =>
-  import("react-icons/si").then((m) => ({ default: m.SiDotnet }))
-);
-const SiSpring = lazy(() =>
-  import("react-icons/si").then((m) => ({ default: m.SiSpring }))
-);
-const SiExpress = lazy(() =>
-  import("react-icons/si").then((m) => ({ default: m.SiExpress }))
-);
-const SiSass = lazy(() =>
-  import("react-icons/si").then((m) => ({ default: m.SiSass }))
-);
+import { SiReact, SiAdonisjs, SiDotnet, SiSpring, SiExpress, SiSass } from "react-icons/si";
 
 export default function About() {
   const { t } = useTranslation();

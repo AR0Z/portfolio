@@ -5,7 +5,7 @@ import { Loader } from "@/components/Loader";
 import LineSeparator from "@/components/LineSeparator";
 
 import Hero from "@/components/Hero/";
-import About from "@/components/About/";
+const About = lazy(() => import("@/components/About/"));
 const Projects = lazy(() => import("@/components/Projects/"));
 const Contact = lazy(() => import("@/components/Contact/"));
 
@@ -14,9 +14,7 @@ export function Home() {
 
   return (
     <>
-      <Suspense fallback={<Loader />}>
-        <Hero />
-      </Suspense>
+      <Hero />
       <LineSeparator />
       <About />
       <Suspense fallback={<Loader />}>
