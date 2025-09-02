@@ -1,17 +1,38 @@
 @use "../../variables.scss" as *;
 
 .Contact {
-    margin: 100px 350px 50px 350px;
+  margin: 100px 350px 50px 350px;
 
-    h2 {
-        font-family: "Poppins-ExtraLight";
-        font-size: 2.5rem;
-        color: $primary-color;
+  h2 {
+    font-family: "Poppins-ExtraLight";
+    font-size: 2.5rem;
+    color: $primary-color;
+  }
+
+  p {
+    font-family: "ClashDisplay-Regular";
+    font-size: 4rem;
+    color: $secondary-color;
+    @media (max-width: 1300px) {
+      font-size: 2rem;
     }
+  }
 
+  @media (max-width: 900px) {
+    margin: 100px 220px;
+  }
+
+  @media (max-width: 600px) {
+    margin: 100px 40px 100px 40px;
     p {
-        font-family: "ClashDisplay-Regular";
-        font-size: 4rem;
-        color: $secondary-color;
+      font-size: 2rem;
     }
+  }
+
+  @media (max-width: 400px) {
+    margin: 100px 40px 100px 40px;
+    p {
+      font-size: 2rem;
+    }
+  }
 }

@@ -1,6 +1,25 @@
 @use "./variables.scss" as *;
+@use "sass:color";
 
+html {
+  font-size: 16px;
 
+  @media (max-width: 900px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 9px;
+  }
+
+  @media (min-width: 2560px) {
+    font-size: 20px;
+  }
+}
 
 /* ClashDisplay */
 @font-face {
@@ -91,11 +110,12 @@ body {
 
 .nav {
   z-index: 10;
-  width: calc(1920px - 3rem);
+  width: calc(100% - 6rem);
+  max-width: 1920px;
   position: fixed;
   display: flex;
   justify-content: space-between;
-  margin: 1rem 1.5rem;
+  margin: 1rem 3rem;
 
   .lang {
     font-family: "ClashDisplay-Semibold";
@@ -115,6 +135,14 @@ body {
 
       &.active {
         color: $secondary-color;
+
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+
+      &:hover {
+        color: color.adjust($primary-color, $lightness: -20%);
       }
     }
 
@@ -156,4 +184,3 @@ footer {
     }
   }
 }
-

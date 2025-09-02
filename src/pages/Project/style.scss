@@ -1,0 +1,184 @@
+@use "../../variables.scss" as *;
+@use "sass:color";
+
+.project {
+    padding: 240px 240px;
+
+    &__title {
+        max-width: 1000px;
+        padding: 50px;
+        background: linear-gradient(to bottom, $primary-color, black);
+        border-radius: 50px;
+        margin: auto;
+        position: relative;
+        
+
+        &__image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 100px;
+        }
+
+        &__text {
+            font-family: "ClashDisplay-Semibold";
+            font-size: 6rem;
+            position: absolute;
+            top: -75px;
+            left: -200px;
+        }
+
+        &__subtitle {
+            font-family: "Poppins-SemiBold";
+            font-size: 4rem;
+            position: absolute;
+            bottom: -50px;
+            right: -200px;
+        }
+    }
+
+    &__content {
+        margin-top: 150px;
+        font-family: "Poppins-Semibold";
+        font-size: 1.6rem;
+        line-height: 1.5;
+        p {
+           margin-top: 50px;
+        }
+    }
+
+    &__collaborator {
+        font-family: "OverTheRainbow";
+        color: $primary-color;
+        a {
+            font-family: "Poppins-SemiBold";
+            color: $secondary-color;
+            text-decoration: none;
+             &:hover{
+                color: color.adjust($secondary-color, $lightness: -30%);
+            }
+        }
+    }
+
+    &__source {
+        font-family: "OverTheRainbow";
+        color: $primary-color;
+        a {
+            font-family: "Poppins-SemiBold";
+            color: $secondary-color;
+            text-decoration: none;
+
+            &:hover{
+                color: color.adjust($secondary-color, $lightness: -30%);
+            }
+        }
+    }
+
+}
+
+@media (max-width: 1000px) {
+    .project {
+        padding: 180px 180px;
+
+        &__title {
+            padding: 40px;
+            border-radius: 40px;
+
+            &__text {
+                font-size: 5rem;
+                top: -60px;
+                left: -150px;
+            }
+
+            &__subtitle {
+                font-size: 3rem;
+                bottom: -40px;
+                right: -150px;
+            }
+
+            &__image {
+                border-radius: 80px;
+            }
+        }
+
+        &__content {
+            margin-top: 100px;
+            font-size: 1.5rem;
+
+            p {
+                margin-top: 40px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .project {
+        padding: 120px 120px;
+
+        &__title {
+            padding: 30px;
+            border-radius: 30px;
+
+            &__text {
+                font-size: 4rem;
+                top: -50px;
+                left: -100px;
+            }
+
+            &__image {
+                border-radius: 40px;
+            }
+
+            &__subtitle {
+                font-size: 2.5rem;
+                bottom: -30px;
+                right: -100px;
+            }
+        }
+
+        &__content {
+            margin-top: 75px;
+            font-size: 1.4rem;
+
+            p {
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .project {
+        padding: 80px 80px;
+
+        &__title {
+            padding: 20px;
+            border-radius: 20px;
+
+            &__text {
+                font-size: 3rem;
+                top: -30px;
+                left: -50px;
+            }
+
+            &__image {
+                border-radius: 30px;
+            }
+
+            &__subtitle {
+                font-size: 2rem;
+                bottom: -20px;
+                right: -50px;
+            }
+        }
+
+        &__content {
+            margin-top: 50px;
+            font-size: 1.2rem;
+
+            p {
+                margin-top: 20px;
+            }
+        }
+    }
+}

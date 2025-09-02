@@ -8,5 +8,9 @@
   "projects-soon": "BIENTÔT...",
   "contact-title": "Contactez-moi",
   "footer": "Design réalisé par <a href=\"https://emma-deltenre.be/\" target=\"_blank\" rel=\"noopener noreferrer\">EMMA</a>.",
-  "github": "Voir le code source sur <a href=\"https://github.com/AR0Z/portfolio\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a>."
+  "github": "Voir le code source sur <a href=\"https://github.com/AR0Z/portfolio\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a>.",
+  "error-title": "Oups, astronaute égaré",
+  "error-subtitle": "La page a fait un commit directement dans un trou noir...",
+  "collaborateur": "Avec / ",
+  "source": "Code source / "
 }

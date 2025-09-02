@@ -1,4 +1,4 @@
-import { useTranslation } from "@/TranslationContext.jsx";
+import { useTranslation } from "@/TranslationContext";
 import { Suspense, lazy } from "preact/compat";
 
 import { Loader } from "@/components/Loader";

@@ -12,6 +12,18 @@
       color: $primary-color;
     }
   }
+
+  @media (max-width: 900px) {
+    margin: 100px 220px;
+  }
+
+  @media (max-width: 600px) {
+    margin: 100px 40px 100px 40px;
+  }
+
+  @media (max-width: 400px) {
+    margin: 100px 40px 100px 40px;
+  }
 }
 
 .Skills {
@@ -67,6 +79,40 @@
         &:hover {
           color: color.adjust($primary-color, $lightness: -10%);
         }
+      }
+    }
+
+    @media (max-width: 1200px) {
+      margin-left: 0px;
+      margin-top: 200px;
+    }
+
+    @media (max-width: 900px) {
+      margin-left: 0px;
+      margin-top: 200px;
+      svg {
+        width: 50px;
+        height: 50px;
+        color: $primary-color;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__Title {
+      img {
+        width: 100px;
+        top: 4rem;
+      }
+    }
+
+    &__Container {
+      margin-left: 0px;
+      margin-top: 100px;
+      svg {
+        width: 50px;
+        height: 50px;
+        color: $primary-color;
       }
     }
   }

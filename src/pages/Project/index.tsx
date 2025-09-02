@@ -1,6 +1,10 @@
-import { useTranslation } from "@/TranslationContext.jsx";
+import { useTranslation } from "@/TranslationContext";
 import "./style.scss";
 import projectsDataRaw from "@/locales/projects.json";
+const images = import.meta.glob("@/assets/projects/*.png", {
+  eager: true,
+  import: "default",
+});
 
 const projectsData: Array<{ id: string; [key: string]: any }> = Array.isArray(
   projectsDataRaw
@@ -8,10 +12,10 @@ const projectsData: Array<{ id: string; [key: string]: any }> = Array.isArray(
   ? projectsDataRaw
   : [];
 
-import { NotFound } from "../_404.js";
+import { NotFound } from "../404/_404.js";
 
 export function Project({ id }) {
-  const { lang } = useTranslation();
+  const { lang, t } = useTranslation();
 
   const project = projectsData.find((p) => p.id === id);
 
@@ -19,10 +23,50 @@ export function Project({ id }) {
     return <NotFound />;
   }
 
+  const imgSrc = images[`/src/assets/projects/${project.image}`] as string;
+
   return (
-    <div className="project">
-      <h1>{project.title[lang]}</h1>
-      <p>{project.description[lang]}</p>
-    </div>
+    <section className="project">
+      <div className="project__title">
+        <h1 className="project__title__text">
+          {project.title[lang] || project.title["en"]}
+        </h1>
+        <img className="project__title__image" src={imgSrc} alt="" />
+        <h2 className="project__title__subtitle">
+          {project.type[lang] || project.type["en"]}
+        </h2>
+      </div>
+      <div className="project__content">
+        
+         {project.collaborator && project.collaborator.length > 0 && (
+            <div className="project__collaborator">
+              {t("collaborateur")}
+              {project.collaborator.map((c) => (<>
+                  <a key={c.name} href={c.link} target="_blank" rel="noopener noreferrer">
+                    @{c.name}
+                  </a>{project.collaborator.indexOf(c) !== project.collaborator.length - 1 && ", "}
+              </>
+              ))}
+            </div>
+          )}
+        {project.sources && project.sources.length > 0 && (
+          <div className="project__source">
+            {t("source")}
+            {project.sources.map((source) => <>
+              <a key={source.name} href={source.link} target="_blank" rel="noopener noreferrer">
+                {source.name}
+              </a>
+              {project.sources.indexOf(source) !== project.sources.length - 1 && ", "}
+            </>
+            )}
+          </div>
+        )}
+        <p
+          dangerouslySetInnerHTML={{
+            __html: project.description[lang] || project.description["en"],
+          }}
+        />
+      </div>
+    </section>
   );
 }

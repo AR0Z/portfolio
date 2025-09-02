@@ -8,7 +8,7 @@ import {
 
 // pages
 import { Home } from "@/pages/Home";
-import { NotFound } from "@/pages/_404.jsx";
+import { NotFound } from "@/pages/404/_404";
 import { Project } from "@/pages/Project";
 
 // components
@@ -16,7 +16,7 @@ import { Header } from "@/components/Header.jsx";
 import { ParticlesBackground } from "@/components/ParticlesBackground";
 import { Footer } from "@/components/Footer.jsx";
 // context
-import { TranslationProvider } from "@/TranslationContext.jsx";
+import { TranslationProvider } from "@/TranslationContext";
 
 // styles
 import "@/style.scss";

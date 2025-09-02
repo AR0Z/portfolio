@@ -1,11 +1,15 @@
 {
-    "title":"Developer Full <span>Stack</span>",
-    "about":"Hey! I’m Germain, 23 years old, freshly graduated in web application development at Henallux. <span class=\"highlight\">Passionate</span> about computers since always, I enjoy as much exploring new video games as <span class=\"highlight\">creating tools</span>, whether to automate small everyday tasks or bring slightly crazy ideas to life.<br /><span class=\"highlight\">Curious</span>, always eager to discover new technologies, I love taking on challenges and turning my creativity into tangible projects. My goal? To keep <span class=\"highlight\">learning</span>, <span class=\"highlight\">coding</span>, <span class=\"highlight\">experimenting</span>… and most importantly <span class=\"highlight\">sharing</span> my passion for development with others.",
-    "skillsMore": "For the full list, check out my <a href=\"https://github.com/AR0Z\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a>.",
-    "projects-first": "ALL",
-    "projects-second": "MY",
-    "projects-third": "PROJECTS",
-    "projects-soon": "SOON...",
-    "contact-title": "Contact me",
-    "footer": "Design made by <a href=\"https://emma-deltenre.be/\" target=\"_blank\" rel=\"noopener noreferrer\">EMMA</a>."
+  "title": "Developer Full <span>Stack</span>",
+  "about": "Hey! I’m Germain, 23 years old, freshly graduated in web application development at Henallux. <span class=\"highlight\">Passionate</span> about computers since always, I enjoy as much exploring new video games as <span class=\"highlight\">creating tools</span>, whether to automate small everyday tasks or bring slightly crazy ideas to life.<br /><span class=\"highlight\">Curious</span>, always eager to discover new technologies, I love taking on challenges and turning my creativity into tangible projects. My goal? To keep <span class=\"highlight\">learning</span>, <span class=\"highlight\">coding</span>, <span class=\"highlight\">experimenting</span>… and most importantly <span class=\"highlight\">sharing</span> my passion for development with others.",
+  "skillsMore": "For the full list, check out my <a href=\"https://github.com/AR0Z\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a>.",
+  "projects-first": "ALL",
+  "projects-second": "MY",
+  "projects-third": "PROJECTS",
+  "projects-soon": "SOON...",
+  "contact-title": "Contact me",
+  "footer": "Design made by <a href=\"https://emma-deltenre.be/\" target=\"_blank\" rel=\"noopener noreferrer\">EMMA</a>.",
+  "error-title": "Oops, lost astronaut",
+  "error-subtitle": "The page committed directly into a black hole...",
+  "collaborateur": "With / ",
+  "source": "Source code / "
 }
