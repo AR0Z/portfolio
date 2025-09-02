@@ -20,7 +20,6 @@ export const TranslationProvider = ({ children }) => {
       (localStorage.setItem("lang", "en"), "en");
   }
 
-
   const [lang, setLang] = useState(defaultLang);
 
   useEffect(() => {

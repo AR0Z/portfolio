@@ -35,10 +35,10 @@ function injectMeta(filePath, { title, description, og, twitter }) {
 // Home
 injectMeta(path.join(distDir, 'index.html'), {
   title: 'Germain Duchêne – Portfolio',
-  description: 'Portfolio de Germain Duchêne, développeur .NET et créateur de projets web et Minecraft.',
+  description: 'Portfolio de Germain Duchêne, développeur full-stack travaillant avec des technologies modernes.',
   og: {
     title: 'Germain Duchêne – Portfolio',
-    description: 'Portfolio de Germain Duchêne, développeur .NET et créateur de projets web et Minecraft.',
+    description: 'Portfolio de Germain Duchêne, développeur full-stack travaillant avec des technologies modernes.',
     type: 'website',
     url: 'https://duchene.dev',
     image: 'https://duchene.dev/og-image-home.png',
@@ -46,7 +46,7 @@ injectMeta(path.join(distDir, 'index.html'), {
   twitter: {
     card: 'summary_large_image',
     title: 'Germain Duchêne – Portfolio',
-    description: 'Portfolio de Germain Duchêne, développeur .NET et créateur de projets web et Minecraft.',
+    description: 'Portfolio de Germain Duchêne, développeur full-stack travaillant avec des technologies modernes.',
     image: 'https://duchene.dev/og-image-home.png',
   }
 });

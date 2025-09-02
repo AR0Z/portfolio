@@ -12,7 +12,7 @@ const projectsData: Array<{ id: string; [key: string]: any }> = Array.isArray(
   ? projectsDataRaw
   : [];
 
-import { NotFound } from "../404/_404.js";
+import { NotFound } from "../404/index.js";
 
 export function Project({ id }) {
   const { lang, t } = useTranslation();
@@ -63,7 +63,7 @@ export function Project({ id }) {
         )}
         <p
           dangerouslySetInnerHTML={{
-            __html: project.description[lang] || project.description["en"],
+            __html: project.description[lang] || project.description["fr"],
           }}
         />
       </div>
