@@ -22,7 +22,8 @@
     "eslint-config-preact": "^2.0.0",
     "sass": "^1.90.0",
     "typescript": "^5.9.2",
-    "vite": "^7.0.4"
+    "vite": "^7.0.4",
+    "vite-plugin-imagemin": "^0.6.1"
   },
   "eslintConfig": {
     "extends": "preact"

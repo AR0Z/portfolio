@@ -1,6 +1,9 @@
 import { defineConfig } from 'vite';
 import preact from '@preact/preset-vite';
 
+import viteImagemin from "vite-plugin-imagemin";
+
+
 import { fileURLToPath } from 'url'
 import { dirname, resolve } from 'path'
 
@@ -22,27 +25,36 @@ export default defineConfig({
 
 			},
 		}),
+		viteImagemin({
+			gifsicle: {
+				optimizationLevel: 3, // compression GIF
+			},
+			optipng: {
+				optimizationLevel: 7, // compression PNG
+			},
+			mozjpeg: {
+				quality: 75, // compression JPEG
+			},
+			pngquant: {
+				quality: [0.65, 0.8], // compression PNG adaptative
+				speed: 4,
+			},
+			svgo: {
+				plugins: [
+					{ name: "removeViewBox" },
+					{ name: "removeEmptyAttrs", active: false },
+				],
+			},
+			webp: {
+				quality: 75, // conversion en WebP
+			}
+		}),
 	],
 	base: '/',
 	build: {
 		outDir: 'dist',
-		minify: 'esbuild', // par défaut, esbuild minifie le JS
-		cssCodeSplit: true, // sépare le CSS en plusieurs fichiers si possible
-		rollupOptions: {
-			output: {
-				chunkFileNames: 'assets/[name]-[hash].js',
-				entryFileNames: 'assets/[name]-[hash].js',
-				assetFileNames: 'assets/[name]-[hash].[ext]',
-				manualChunks(id) {
-					if (id.includes('node_modules')) {
-						if (id.includes('preact')) return 'preact';
-						if (id.includes('preact-iso')) return 'preact-iso';
-						if (id.includes('react-icons')) return 'react-icons';
-						return 'vendor';
-					}
-				}
-			}
-		}
+		minify: 'esbuild',
+		cssCodeSplit: true,
 	},
 	resolve: {
 		alias: {

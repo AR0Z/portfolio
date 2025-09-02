@@ -40,15 +40,23 @@
     display: flex;
     flex-direction: column;
     margin-top: 200px;
+    gap: 50px;
   }
 
   &__Item {
+    display: flex;
     position: relative;
     max-width: 580px;
     width: 100%;
-    height: 490px;
+    max-height: 490px;
+    height: 100%;
+    aspect-ratio: 16 / 9;
     margin-bottom: 50px;
     border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 5%; // padding responsive horizontal et vertical
+    padding-bottom: calc(1rem + 5%); // réserve automatique pour le titre
     &:nth-child(odd) {
       background: linear-gradient(to left, $primary-color, $background-color);
       transform: rotate(-10deg);
@@ -56,8 +64,8 @@
 
     &:nth-child(even) {
       background: linear-gradient(to left, $background-color, $primary-color);
-       margin-left: auto;
-       transform: rotate(10deg);
+      margin-left: auto;
+      transform: rotate(10deg);
     }
 
     &:nth-child(odd) &__Title {
@@ -71,20 +79,16 @@
     &__Title {
       position: absolute;
       font-family: "ClashDisplay-Regular";
-      font-size: 2rem;
+      font-size: 1.5rem;
       bottom: 3px;
     }
 
     &__Link {
       img {
-        position: absolute;
-        width: calc(100% - 50px);
-        height: auto;
+        max-width: 100%;
+        max-height: 100%;
         border-radius: 40px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
+        object-fit: contain;
       }
     }
   }
