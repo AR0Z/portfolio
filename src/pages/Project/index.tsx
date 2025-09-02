@@ -37,33 +37,48 @@ export function Project({ id }) {
         </h2>
       </div>
       <div className="project__content">
-        
-         {project.collaborator && project.collaborator.length > 0 && (
-            <div className="project__collaborator">
-              {t("collaborateur")}
-              {project.collaborator.map((c) => (<>
-                  <a key={c.name} href={c.link} target="_blank" rel="noopener noreferrer">
-                    @{c.name}
-                  </a>{project.collaborator.indexOf(c) !== project.collaborator.length - 1 && ", "}
+        {project.collaborator && project.collaborator.length > 0 && (
+          <div className="project__collaborator">
+            {t("collaborateur")}
+            {project.collaborator.map((c) => (
+              <>
+                <a
+                  key={c.name}
+                  href={c.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  @{c.name}
+                </a>
+                {project.collaborator.indexOf(c) !==
+                  project.collaborator.length - 1 && ", "}
               </>
-              ))}
-            </div>
-          )}
+            ))}
+          </div>
+        )}
         {project.sources && project.sources.length > 0 && (
           <div className="project__source">
             {t("source")}
-            {project.sources.map((source) => <>
-              <a key={source.name} href={source.link} target="_blank" rel="noopener noreferrer">
-                {source.name}
-              </a>
-              {project.sources.indexOf(source) !== project.sources.length - 1 && ", "}
-            </>
-            )}
+            {project.sources.map((source) => (
+              <>
+                <a
+                  key={source.name}
+                  href={source.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {source.name}
+                </a>
+                {project.sources.indexOf(source) !==
+                  project.sources.length - 1 && ", "}
+              </>
+            ))}
           </div>
         )}
         <p
           dangerouslySetInnerHTML={{
-            __html: project.description[lang] || project.description["fr"],
+            __html:
+              project.description[lang] || project.description["fr"] || "",
           }}
         />
       </div>
