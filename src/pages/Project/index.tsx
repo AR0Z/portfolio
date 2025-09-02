@@ -1,3 +1,5 @@
+import renderToString from "preact-render-to-string";
+
 import { useTranslation } from "@/TranslationContext";
 import "./style.scss";
 import projectsDataRaw from "@/locales/projects.json";
@@ -24,6 +26,20 @@ export function Project({ id }) {
   }
 
   const imgSrc = images[`/src/assets/projects/${project.image}`] as string;
+
+  // côté prerender
+  const langSSR = typeof window === "undefined" ? "fr" : lang;
+
+  const descriptionContent =
+    project.description?.[langSSR] ||
+    project.description?.["fr"] ||
+    project.description?.["en"] ||
+    "<em>Description manquante</em>";
+
+  // Transformer le HTML en JSX "safe" pour prerender
+  const descriptionJSX = renderToString(
+    <p dangerouslySetInnerHTML={{ __html: descriptionContent }} />
+  );
 
   return (
     <section className="project">
@@ -76,15 +92,7 @@ export function Project({ id }) {
           </div>
         )}
 
-        <p
-          dangerouslySetInnerHTML={{
-            __html:
-              project.description[lang] ||
-              project.description["fr"] ||
-              project.description["en"] ||
-              "Description manquante",
-          }}
-        />
+       <div className="project__description" dangerouslySetInnerHTML={{ __html: descriptionJSX }} />
       </div>
     </section>
   );
