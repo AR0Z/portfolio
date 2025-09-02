@@ -24,11 +24,14 @@ export function Project({ id }) {
   }
 
   const imgSrc = images[`/src/assets/projects/${project.image}`] as string;
+  const langSSR = typeof window === "undefined" ? "fr" : lang;
+
   const description =
-    project.description?.[lang] ||
+    project.description?.[langSSR] ||
     project.description?.["fr"] ||
+    project.description?.["en"] ||
     "Description manquante";
-    
+
   return (
     <section className="project">
       <div className="project__title">
