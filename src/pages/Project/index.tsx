@@ -24,7 +24,11 @@ export function Project({ id }) {
   }
 
   const imgSrc = images[`/src/assets/projects/${project.image}`] as string;
-
+  const description =
+    project.description?.[lang] ||
+    project.description?.["fr"] ||
+    "Description manquante";
+    
   return (
     <section className="project">
       <div className="project__title">
@@ -75,12 +79,8 @@ export function Project({ id }) {
             ))}
           </div>
         )}
-        <p
-          dangerouslySetInnerHTML={{
-            __html:
-              project.description[lang] || project.description["fr"] || "",
-          }}
-        />
+
+        <p dangerouslySetInnerHTML={{ __html: description }} />
       </div>
     </section>
   );
