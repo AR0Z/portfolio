@@ -3,8 +3,10 @@
   "type": "module",
   "scripts": {
     "copy-404": "node scripts/copy404.js",
+    "generate-seo": "node scripts/generatorSEO.js",
+    "inject-meta": "node scripts/injectMeta.js",
     "dev": "vite --host",
-    "build": "vite build && npm run copy-404",
+    "build": "vite build && npm run copy-404 && npm run inject-meta",
     "preview": "vite preview"
   },
   "dependencies": {

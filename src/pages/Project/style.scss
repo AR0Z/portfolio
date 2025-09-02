@@ -37,12 +37,17 @@
     }
 
     &__content {
-        margin-top: 150px;
-        font-family: "Poppins-Semibold";
+        margin-top: 200px;
+        font-family: "Poppins-ExtraLight";
         font-size: 1.6rem;
         line-height: 1.5;
         p {
            margin-top: 50px;
+
+           .highlight {
+               font-family: "Poppins-Bold";
+               color: $primary-color;
+           }
         }
     }
 

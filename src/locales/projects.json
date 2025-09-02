@@ -9,23 +9,24 @@
       "fr": "Project Scolaire",
       "en": "School Project"
     },
-        "collaborator": [
+    "collaborator": [
       {
         "name": "Eocene",
         "link": "https://www.eocene.be/"
       }
     ],
     "description": {
-      "en": "My personal portfolio website showcasing my projects and skills.",
-      "fr": "Mon site portfolio personnel présentant mes projets et compétences."
+      "en": "<p><span class='highlight'>Match IT</span> is a project improved during my internship at <span class='highlight'>Eocene</span>, aimed at enhancing the CRM and ATS systems. The stack includes <span class='highlight'>.NET</span>, <span class='highlight'>Entity Framework Core</span>, <span class='highlight'>MediatR</span> (for the mediator pattern), <span class='highlight'>Blazor</span>, among others.</p><p>In the CRM, several bugs were fixed, such as the display of projects on the client page. A <span class='highlight'>Kanban view</span> was implemented with cards per opportunity to provide clear information and allow changing states by dragging cards.</p><p>An <span class='highlight'>Outbox pattern</span> was set up to send emails: messages are sent to an <span class='highlight'>Azure Service Bus</span>, which ensures delivery even if a service is temporarily unavailable, and triggers an Azure Function to send the emails via a third-party service.</p><p>In the ATS, the candidate process was completed by implementing <span class='highlight'>salary proposals</span>, generating a PDF offer, and sending a link to the file in <span class='highlight'>Azure Blob Storage</span> where the candidate can accept, refuse, or negotiate the offer. Once accepted, an automatic form is sent to the candidate to fill in their information.</p><p>After form submission, it is possible to generate, correct, and send a contract using <span class='highlight'>DocuSign</span> for electronic signatures, with a webhook to update the system on acceptance or refusal. If the offer is signed, the candidate transitions to employee status, and a checklist is opened to guide HR through the necessary actions.</p><p>Additional tasks included implementing a <span class='highlight'>middleware</span> for better error management, informing the front-end of real errors, and finally, deploying the solution to <span class='highlight'>Azure Cloud</span> using <span class='highlight'>Terraform</span>.</p>",
+      "fr": "<p><span class='highlight'>Match IT</span> est un projet amélioré durant mon stage chez <span class='highlight'>Eocene</span>, visant à perfectionner les systèmes <span class='highlight'>CRM</span> et <span class='highlight'>ATS</span>. La stack comprend <span class='highlight'>.NET</span>, <span class='highlight'>Entity Framework Core</span>, <span class='highlight'>MediatR</span> (pour le mediator pattern), <span class='highlight'>Blazor</span>, entre autres.</p><p>Dans le CRM, plusieurs bugs ont été corrigés, comme l’affichage des projets sur la page client. Une <span class='highlight'>vue Kanban</span> a été mise en place avec des cartes par opportunité pour afficher les informations clairement et permettre de changer les états en glissant les cartes.</p><p>Un <span class='highlight'>Outbox pattern</span> a été implémenté pour l’envoi des mails : les messages sont envoyés à un <span class='highlight'>Azure Service Bus</span>, qui garantit l’envoi même si un service est temporairement indisponible, et déclenche une Azure Function pour envoyer les emails via un service tiers.</p><p>Dans l’ATS, le processus candidat a été finalisé avec la mise en place des <span class='highlight'>propositions de salaire</span>, la génération d’un PDF de l’offre et l’envoi d’un lien vers le fichier dans <span class='highlight'>Azure Blob Storage</span>, permettant au candidat d’accepter, refuser ou négocier. Une fois accepté, un formulaire automatique est envoyé pour remplir ses informations.</p><p>Après soumission du formulaire, il est possible de générer, corriger et envoyer un contrat avec <span class='highlight'>DocuSign</span> pour la signature électronique, avec un webhook pour notifier le système. Si l’offre est signée, le candidat devient collaborateur, et une checklist est ouverte pour guider les actions RH.</p><p>Des tâches supplémentaires ont inclus la mise en place d’un <span class='highlight'>middleware</span> pour une meilleure gestion des erreurs, afin d’informer le front-end des erreurs réelles, et enfin, une mise en production réalisée sur <span class='highlight'>Azure Cloud</span> avec <span class='highlight'>Terraform</span>.</p>"
     },
+    "seoDesc": "Match IT est un projet de stage chez Eocene visant à améliorer les systèmes CRM et ATS. Il inclut la correction de bugs, une vue Kanban pour les opportunités, l’implémentation du pattern Outbox pour l’envoi d’emails, la génération de PDF d’offres et contrats avec DocuSign, ainsi que le déploiement sur Azure Cloud avec Terraform.",
     "image": "tfe.png"
   },
   {
     "id": "carpool",
     "title": {
-      "en": "Carpool",
-      "fr": "Carpool"
+      "en": "CarpoolConnect",
+      "fr": "CarpoolConnect"
     },
     "type": {
       "fr": "Project Scolaire",
@@ -56,9 +57,10 @@
       }
     ],
     "description": {
-      "en": "A project focused on developing smart city solutions using IoT and data analytics.",
-      "fr": "Un projet axé sur le développement de solutions pour les villes intelligentes utilisant l'IoT et l'analyse de données."
+      "en": "<p>CarpoolConnect is a fictional project developed as part of the SmartCities module, covering three courses: advanced web client development, mobile development, and back-end and cloud technologies. It aims to promote urban carpooling by facilitating connections between residents for their daily trips. The platform, although not deployed in production, allows users to offer or join free or shared rides, with the possibility for passengers to suggest an intermediate stop.</p><p>For the back-office front-end, <span class='highlight'>React</span> was used, for mobile <span class='highlight'>React Native</span>, and for the backend <span class='highlight'>Express with TypeScript</span>, enabling typed models.</p><p>The project includes several key features: user management with permission levels, detailed profiles, a rating system for drivers and passengers, and complete ride management: creation, participation, acceptance/rejection, and modification under certain conditions. A user verification system was also implemented, requiring the presentation of a driving license and an identity photo validated by an administrator.</p>",
+      "fr": "<p>CarpoolConnect est un projet fictif réalisé dans le cadre du module SmartCities, couvrant trois cours : développement de client Web avancé, développement mobile et technologies back-end et cloud. Il vise à promouvoir le covoiturage urbain en facilitant la mise en relation des habitants pour leurs trajets quotidiens. La plateforme, bien que non mise en production, permet aux utilisateurs de proposer ou de rejoindre des trajets gratuits ou partagés, avec la possibilité pour les passagers de suggérer un arrêt intermédiaire.</p><p>Pour le front back-office, <span class='highlight'>React</span> a été utilisé, pour le mobile <span class='highlight'>React Native</span>, et pour le backend <span class='highlight'>Express en TypeScript</span>, permettant notamment le typage des models.</p><p> Le projet inclut plusieurs fonctionnalités clés : gestion des utilisateurs avec système de permissions, profils détaillés, système de notation pour conducteurs et passagers, et gestion complète des trajets : création, participation, acceptation/refus et modification sous certaines conditions. Un système de vérification des comptes a également été conçu, nécessitant la présentation d’un permis de conduire et d’une photo d’identité validée par un administrateur.</p>"
     },
+    "seoDesc": "CarpoolConnect est un projet fictif du module SmartCities visant à promouvoir le covoiturage urbain. Il inclut la gestion des utilisateurs, des trajets, un système de notation, et un back-end en Express/TypeScript avec front React et mobile React Native.",
     "image": "carpool.png"
   },
   {
@@ -71,16 +73,19 @@
       {
         "name": "Thérence",
         "link": "https://github.com/TH3RY"
-      },
+      }
+    ],
+    "sources": [
       {
-        "name": "Massinissa",
-        "link": "https://github.com/BRMassinissa"
+        "name": "GitHub",
+        "link": "https://github.com/AR0Z/henallux-B3-DAW-project"
       }
     ],
     "description": {
-      "en": "An e-commerce platform for buying and selling furniture online.",
-      "fr": "Une plateforme de commerce électronique pour acheter et vendre des meubles en ligne."
+      "en": "<p>Project developed as part of the Advanced Web Development exam at Henallux, entirely built in <span class='highlight'>Java</span> using <span class='highlight'>Spring</span>, <span class='highlight'>Hibernate</span>, <span class='highlight'>JUnit</span>, and <span class='highlight'>Mockito</span>, with <span class='highlight'>JSP pages</span>.</p><p>The e-commerce platform allows users to create an account, change their password, manage a shopping cart, view their order history with statuses (pending, paid, cancelled), and complete purchases via <span class='highlight'>PayPal</span> (sandbox for testing).</p><p>The application also includes an <span class='highlight'>internationalization system</span> for language support. This project allowed me to apply <span class='highlight'>MVC architecture</span>, <span class='highlight'>data persistence</span>, development of a functional and responsive interface, and the use of <span class='highlight'>design patterns</span> such as the Singleton.</p>",
+      "fr": "<p>Projet développé dans le cadre de l’examen de Développement Web Avancé à Henallux, entièrement réalisé en <span class='highlight'>Java</span> avec <span class='highlight'>Spring</span>, <span class='highlight'>Hibernate</span>, <span class='highlight'>JUnit</span> et <span class='highlight'>Mockito</span>, et utilisant des <span class='highlight'>pages JSP</span>.</p><p>La plateforme e-commerce permet aux utilisateurs de créer un compte, modifier leur mot de passe, gérer un panier, consulter l’historique de leurs commandes avec leur statut (en attente, payé, annulé) et finaliser leurs achats via <span class='highlight'>PayPal</span> (sandbox pour tests).</p><p>L’application inclut un <span class='highlight'>système d’internationalisation</span> pour la gestion des langues. Ce projet m’a permis de mettre en pratique l’<span class='highlight'>architecture MVC</span>, la <span class='highlight'>persistance des données</span>, le développement d’une interface fonctionnelle et responsive, ainsi que l’utilisation de <span class='highlight'>design patterns</span> tels que le Singleton.</p>"
     },
+    "seoDesc": "Projet e-commerce développé à Henallux en Java avec Spring et Hibernate. Permet la gestion de comptes, panier, commandes, achats via PayPal, avec internationalisation et architecture MVC.",
     "type": {
       "fr": "Project Scolaire",
       "en": "School Project"
