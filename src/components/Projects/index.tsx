@@ -24,14 +24,12 @@ export default function Projects() {
     ? projectsDataRaw
     : [];
 
-  const isMobile = window.innerWidth < 768;
-  const startValue = isMobile ? "top 90%" : "top bottom";
-  const endValue = isMobile ? "bottom 10%" : "bottom 80%";
-
-  const x = isMobile ? -5 : -25;
-
   useEffect(() => {
-    // Sélectionner tous les odd items
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+    const startValue = isMobile ? "top 90%" : "top bottom";
+    const endValue = isMobile ? "bottom 10%" : "bottom 80%";
+
+    const x = isMobile ? -5 : -25;
     const oddItems = document.querySelectorAll(
       ".Projects__Item:nth-child(odd)"
     );
@@ -95,7 +93,7 @@ export default function Projects() {
         toggleActions: "play reverse play reverse", // ↓↓ ↑↑
       },
     });
-  }, [window.innerWidth]);
+  }, []);
 
   return (
     <section className="Projects">

@@ -63,7 +63,7 @@ export function Project({ id }) {
         amount: 1,
       },
     });
-  }, [window.innerWidth]);
+  }, []);
 
   // côté prerender
   const langSSR = typeof window === "undefined" ? "fr" : lang;

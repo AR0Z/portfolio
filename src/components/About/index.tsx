@@ -23,13 +23,11 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 export default function About() {
   const { t } = useTranslation();
 
-  const isMobile = window.innerWidth < 768;
-  const startValue = isMobile ? "top 90%" : "top 90%";
-  const endValue = isMobile ? "bottom 0%" : "bottom 10%"; // au lieu de 10% / 80%
-
-  const x = isMobile ? 5 : 100;
-
   useEffect(() => {
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+    const startValue = isMobile ? "top 90%" : "top 90%";
+    const endValue = isMobile ? "bottom 0%" : "bottom 10%"; // au lieu de 10% / 80%
+    const x = isMobile ? 5 : 100;
     let split = SplitText.create(".About__Description", {
       type: "words",
     });
@@ -91,7 +89,7 @@ export default function About() {
         toggleActions: "play reverse play reverse", // ↓↓ ↑↑
       },
     });
-  }, [window.innerWidth]);
+  }, []);
   return (
     <section className="About">
       <p
