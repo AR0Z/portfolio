@@ -26,6 +26,10 @@ function injectMeta(filePath, { title, description, og, twitter }) {
     <meta name="twitter:title" content="${twitter.title}" />
     <meta name="twitter:description" content="${twitter.description}" />
     <meta name="twitter:image" content="${twitter.image}" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
   `;
 
   html = html.replace('<head>', `<head>${metaTags}`);
