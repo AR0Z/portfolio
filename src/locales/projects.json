@@ -91,5 +91,61 @@
       "en": "School Project"
     },
     "image": "e-shop-furniture.png"
+  },
+  {
+    "id": "short",
+    "title": {
+      "en": "Short",
+      "fr": "Short"
+    },
+    "collaborator": [
+      {
+        "name": "Calvin",
+        "link": "https://github.com/CalvinNogueira"
+      }
+    ],
+    "source": [
+      {
+        "name": "v2",
+        "link": "https://github.com/AR0Z/short"
+      },
+      {
+        "name": "v1",
+        "link": "https://github.com/AR0Z/short/tree/v1"
+      }
+    ],
+    "description": {
+      "fr": "<p>Petit projet ayant pour objectif de <span class='highlight'>raccourcir facilement des liens longs</span> et de générer un <span class='highlight'>QR Code</span> pour un partage rapide.</p><p>La <span class='highlight'>V1</span> a été réalisée en <span class='highlight'>PHP</span> avec une gestion basique des liens et redirection instantanée.</p><p>La <span class='highlight'>V2</span> a été refaite avec un front en <span class='highlight'>HTML, CSS, JS</span> et un back en <span class='highlight'>Express (Node.js)</span>, avec mise en place de <span class='highlight'>Docker/Docker Compose</span> pour faciliter le déploiement de la base de données et du backend.</p>",
+      "en": "<p>Small project aimed at <span class='highlight'>easily shortening long URLs</span> and generating a <span class='highlight'>QR Code</span> for quick sharing.</p><p><span class='highlight'>V1</span> was built in <span class='highlight'>PHP</span> with basic link management and instant redirection.</p><p><span class='highlight'>V2</span> was rebuilt with a <span class='highlight'>HTML, CSS, JS</span> frontend and an <span class='highlight'>Express (Node.js)</span> backend, with <span class='highlight'>Docker/Docker Compose</span> setup to handle the database and backend deployment.</p>"
+    },
+    "seoDesc": "Short URL service developed with modern web technologies.",
+    "type": {
+      "fr": "Projet personnel",
+      "en": "Personal Project"
+    },
+    "image": "short.png"
+  },
+  {
+    "id": "dockermonitor",
+    "title": {
+      "en": "Docker Monitor",
+      "fr": "Surveillance Docker"
+    },
+    "source": [
+      {
+        "name": "Github",
+        "link": "https://github.com/AR0Z/discord-docker-monitor"
+      }
+    ],
+   "description": {
+      "fr": "<p>Bot Discord permettant de <span class='highlight'>gérer facilement les containers Docker</span> d’un serveur directement depuis Discord.</p><p>Il permet de voir si les containers sont <span class='highlight'>actifs ou arrêtés</span>, depuis combien de temps ils tournent, et de <span class='highlight'>sélectionner un container</span> pour l’<span class='highlight'>arrêter, démarrer ou redémarrer</span>.</p><p>Le bot fournit également la possibilité de <span class='highlight'>consulter les logs</span> de chaque container. Réalisé avec <span class='highlight'>discord.js</span> et <span class='highlight'>dockerode</span>.</p>",
+      "en": "<p>Discord bot that allows you to <span class='highlight'>easily manage Docker containers</span> on a server directly from Discord.</p><p>It lets you see if containers are <span class='highlight'>running or stopped</span>, how long they’ve been active, and <span class='highlight'>select a container</span> to <span class='highlight'>stop, start, or restart</span> it.</p><p>The bot also provides the ability to <span class='highlight'>view logs</span> for each container. Built using <span class='highlight'>discord.js</span> and <span class='highlight'>dockerode</span>.</p>"
+    },
+    "seoDesc": "Bot Discord pour gérer et surveiller facilement vos containers Docker avec discord.js et dockerode, affichage des logs et contrôle complet depuis Discord.",
+    "type": {
+      "fr": "Projet personnel",
+      "en": "Personal Project"
+    },
+    "image": "docker-monitor.png"
   }
 ]

@@ -53,7 +53,6 @@ export function Project({ id }) {
         start: "top 80%",
         end: "bottom bottom",
         toggleActions: "play none none none",
-        markers: true,
       },
     });
 
