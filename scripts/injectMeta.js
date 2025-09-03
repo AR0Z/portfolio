@@ -83,4 +83,4 @@ projects.forEach(project => {
   });
 });
 
-console.log('Meta tags injected successfully!');
+console.log('✓ Meta tags injected successfully!');

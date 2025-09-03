@@ -2,16 +2,22 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
-const src = path.resolve(__dirname, "../dist/404/index.html");
-const dest = path.resolve(__dirname, "../dist/404.html");
+console.log("> Copying 404.html...");
+try {
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
 
-fs.copyFileSync(src, dest);
-console.log("404.html créé à la racine !");
+    const src = path.resolve(__dirname, "../dist/404/index.html");
+    const dest = path.resolve(__dirname, "../dist/404.html");
 
-// Supprimer le dossier 404 maintenant
-const dirToRemove = path.resolve(__dirname, "../dist/404");
-fs.rmSync(dirToRemove, { recursive: true, force: true });
-console.log("Dossier dist/404 supprimé !");
+    fs.copyFileSync(src, dest);
+    console.log("+ dist/404.html created");
+
+    // Supprimer le dossier 404 maintenant
+    const dirToRemove = path.resolve(__dirname, "../dist/404");
+    fs.rmSync(dirToRemove, { recursive: true, force: true });
+    console.log("- dist/404 removed");
+} catch (err) {
+    console.error("❌ Error copying 404:", err);
+}

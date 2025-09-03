@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import preact from '@preact/preset-vite';
 
-import viteImagemin from "vite-plugin-imagemin";
+import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
 
 import { fileURLToPath } from 'url'
@@ -25,29 +25,40 @@ export default defineConfig({
 
 			},
 		}),
-		viteImagemin({
-			gifsicle: {
-				optimizationLevel: 3, // compression GIF
+		ViteImageOptimizer({
+			// PNG -> Sharp est bien plus rapide que optipng/pngquant
+			png: {
+				quality: 80, // bon équilibre poids/qualité
+				compressionLevel: 9, // max compression
 			},
-			optipng: {
-				optimizationLevel: 7, // compression PNG
+			// JPEG -> équivalent de mozjpeg mais via Sharp
+			jpeg: {
+				quality: 75,
+				progressive: true, // progressive JPEG pour affichage progressif
+				mozjpeg: true,     // active la compression de type mozjpeg
 			},
-			mozjpeg: {
-				quality: 75, // compression JPEG
+			// GIF -> Sharp ne gère pas le GIF anim, donc conversion possible
+			gif: {
+				optimizationLevel: 3,
+				interlaced: true, // affichage progressif
 			},
-			pngquant: {
-				quality: [0.65, 0.8], // compression PNG adaptative
-				speed: 4,
+			// WebP
+			webp: {
+				quality: 75,
 			},
-			svgo: {
+			// AVIF (format plus récent que WebP, encore plus léger)
+			avif: {
+				quality: 60,
+			},
+			// SVG -> optimisation via SVGO
+			svg: {
+				multipass: true,
 				plugins: [
-					{ name: "removeViewBox" },
-					{ name: "removeEmptyAttrs", active: false },
+					{ name: "removeViewBox", active: false }, // garde le viewBox pour responsivité
+					{ name: "removeEmptyAttrs", active: true },
+					{ name: "removeDimensions", active: true }, // évite les width/height fixes
 				],
 			},
-			webp: {
-				quality: 75, // conversion en WebP
-			}
 		}),
 	],
 	base: '/',
