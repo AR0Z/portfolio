@@ -1,4 +1,4 @@
-name: Deploy Preact to GitHub Pages
+name: Deploy my portfolio
 
 on:
   push:

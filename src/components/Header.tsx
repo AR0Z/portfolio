@@ -9,13 +9,13 @@ export function Header() {
     <header>
       <nav className="nav">
         {location.path !== "/" ? (
-          <span onClick={() => location.route("/")}>{"<"}</span>
+          <span className="back" onClick={() => location.route("/")}>{"<"}</span>
         ) : (
           <span></span>
         )}
         <div className={`lang ${lang}-active`}>
           <span
-            className={lang == "fr" ? "selector active" : "selector"}
+            className={lang == "fr" ? "selector active" : "selector"} 
             onClick={() => setLang("fr")}
           >
             FR

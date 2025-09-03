@@ -117,12 +117,20 @@ body {
   justify-content: space-between;
   margin: 1rem 3rem;
 
+  .back {
+    font-family: "ClashDisplay-Semibold";
+    font-size: 1.25rem;
+    color: $primary-color;
+    position: relative;
+  }
+
   .lang {
     font-family: "ClashDisplay-Semibold";
-    width: 60px;
     display: flex;
     justify-content: space-between;
     position: relative;
+    font-size: 1.25rem;
+    gap: 5px;
 
     .separator {
       color: $primary-color;
@@ -148,11 +156,11 @@ body {
 
     &::after {
       content: "";
-      width: 25px;
-      height: 12px;
+      width: 2rem;
+      height: 2rem;
       background: url("./assets/selector.svg") no-repeat center/contain;
       position: absolute;
-      bottom: -12px;
+      bottom: -1.5rem;
       left: 0;
       transition: transform 0.3s ease;
     }
@@ -162,7 +170,7 @@ body {
     }
 
     &.en-active::after {
-      transform: translateX(39px);
+      transform: translateX(2.368rem);
     }
   }
 }
