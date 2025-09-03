@@ -1,4 +1,8 @@
 import renderToString from "preact-render-to-string";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
+import { useEffect } from "preact/compat";
 
 import { useTranslation } from "@/TranslationContext";
 import "./style.scss";
@@ -16,6 +20,8 @@ const projectsData: Array<{ id: string; [key: string]: any }> = Array.isArray(
 
 import { NotFound } from "../404/index.js";
 
+gsap.registerPlugin(ScrollTrigger, SplitText);
+
 export function Project({ id }) {
   const { lang, t } = useTranslation();
 
@@ -26,6 +32,39 @@ export function Project({ id }) {
   }
 
   const imgSrc = images[`/src/assets/projects/${project.image}`] as string;
+
+  useEffect(() => {
+    let text = SplitText.create(".project__content", {
+      type: "words",
+    });
+
+    let textTitle = SplitText.create(".project__title", {
+      type: "chars",
+    });
+
+    gsap.from(text.words, {
+      y: 100,
+      opacity: 0,
+      stagger: {
+        each: 0.01,
+      },
+      scrollTrigger: {
+        trigger: ".project__content",
+        start: "top 80%",
+        end: "bottom bottom",
+        toggleActions: "play none none none",
+        markers: true,
+      },
+    });
+
+    gsap.from(textTitle.chars, {
+      x: 100,
+      opacity: 0,
+      stagger: {
+        amount: 1,
+      },
+    });
+  }, [window.innerWidth]);
 
   // côté prerender
   const langSSR = typeof window === "undefined" ? "fr" : lang;
@@ -92,7 +131,10 @@ export function Project({ id }) {
           </div>
         )}
 
-       <div className="project__description" dangerouslySetInnerHTML={{ __html: descriptionJSX }} />
+        <div
+          className="project__description"
+          dangerouslySetInnerHTML={{ __html: descriptionJSX }}
+        />
       </div>
     </section>
   );

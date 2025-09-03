@@ -37,11 +37,6 @@ export default defineConfig({
 				progressive: true, // progressive JPEG pour affichage progressif
 				mozjpeg: true,     // active la compression de type mozjpeg
 			},
-			// GIF -> Sharp ne gère pas le GIF anim, donc conversion possible
-			gif: {
-				optimizationLevel: 3,
-				interlaced: true, // affichage progressif
-			},
 			// WebP
 			webp: {
 				quality: 75,

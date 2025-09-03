@@ -19,6 +19,9 @@
     max-width: 1920px;
     font-family: "ClashDisplay-Semibold";
     padding: 240px 220px 200px 220px;
+    opacity: 0;
+    transform: translateX(-50vw);
+    animation: fadeUp 1s ease-out forwards;
     h1,
     h2 {
       font-size: 6rem;
@@ -51,6 +54,8 @@
     justify-content: right;
     gap: 40px;
     margin-right: 100px;
+    transform: translateY(25vh);
+    animation: fadeUp 1s ease-out forwards;
     .Link {
       display: flex;
       gap: 10px;
@@ -119,5 +124,12 @@
       margin: auto;
       max-width: 1920px;
     }
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

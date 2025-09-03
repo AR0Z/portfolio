@@ -2,14 +2,96 @@ import { useTranslation } from "@/TranslationContext";
 import "./style.scss";
 import arrow from "@/assets/arrow.png";
 
-import { lazy, Suspense } from "preact/compat";
+import { Suspense, useEffect } from "preact/compat";
 import { Loader } from "../Loader";
 
-import { SiReact, SiAdonisjs, SiDotnet, SiSpring, SiExpress, SiSass } from "react-icons/si";
+import {
+  SiReact,
+  SiAdonisjs,
+  SiDotnet,
+  SiSpring,
+  SiExpress,
+  SiSass,
+} from "react-icons/si";
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function About() {
   const { t } = useTranslation();
 
+  const isMobile = window.innerWidth < 768;
+  const startValue = isMobile ? "top 90%" : "top 90%";
+  const endValue = isMobile ? "bottom 0%" : "bottom 10%"; // au lieu de 10% / 80%
+
+  const x = isMobile ? 5 : 100;
+
+  useEffect(() => {
+    let split = SplitText.create(".About__Description", {
+      type: "words",
+    });
+
+    gsap.from(split.words, {
+      x: x,
+      opacity: 0,
+      stagger: {
+        amount: 2,
+      },
+      scrollTrigger: {
+        trigger: ".About__Description",
+        start: startValue,
+        end: endValue,
+        toggleActions: "play reverse play reverse", // ↓↓ ↑↑
+      },
+    });
+
+    gsap.from(".Skills__Container svg", {
+      y: 100,
+      opacity: 0,
+      stagger: {
+        amount: 0.5,
+        from: "random",
+      },
+      scrollTrigger: {
+        trigger: ".Skills__Container",
+        start: startValue,
+        end: endValue,
+        toggleActions: "play reverse play reverse", // ↓↓ ↑↑
+      },
+    });
+
+    gsap.from(".Skills__Title", {
+      y: 100,
+      rotateY: 90,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".Skills__Title",
+        start: startValue,
+        end: endValue,
+        toggleActions: "play reverse play reverse", // ↓↓ ↑↑
+      },
+    });
+
+    let text = SplitText.create(".Skills__Container-text");
+
+    gsap.from(text.words, {
+      y: 100,
+      opacity: 0,
+      stagger: {
+        amount: 0.5,
+      },
+      scrollTrigger: {
+        trigger: ".Skills__Container-text",
+        start: startValue,
+        end: endValue,
+        toggleActions: "play reverse play reverse", // ↓↓ ↑↑
+      },
+    });
+  }, [window.innerWidth]);
   return (
     <section className="About">
       <p

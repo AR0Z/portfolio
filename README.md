@@ -7,6 +7,7 @@
 [![Preact](https://img.shields.io/badge/Preact-10.26-brightgreen?logo=preact&logoColor=white)](https://preactjs.com/)
 [![Vite](https://img.shields.io/badge/Vite-7.0-purple?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Sass](https://img.shields.io/badge/Sass-1.90-pink?logo=sass&logoColor=white)](https://sass-lang.com/)
+[![GSAP](https://img.shields.io/badge/GSAP-3.11-blue?logo=greensock&logoColor=white)](https://greensock.com/gsap/)
 
 ## 📑 Table des matières
 

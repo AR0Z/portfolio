@@ -16,7 +16,9 @@ export function Home() {
     <>
       <Hero />
       <LineSeparator />
-      <About />
+      <Suspense fallback={<Loader />}>
+        <About />
+      </Suspense>
       <Suspense fallback={<Loader />}>
         <Projects />
       </Suspense>
