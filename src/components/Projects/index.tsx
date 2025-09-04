@@ -47,7 +47,6 @@ export default function Projects() {
             start: startValue,
             end: endValue,
             scrub: 1,
-            markers: true,
           },
         }
       );
@@ -69,7 +68,6 @@ export default function Projects() {
             start: startValue,
             end: endValue,
             scrub: 1,
-            markers: true,
           },
         }
       );
