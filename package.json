@@ -6,7 +6,7 @@
     "generate-seo": "node scripts/generatorSEO.js",
     "inject-meta": "node scripts/injectMeta.js",
     "dev": "vite --host",
-    "build": "vite build && npm run copy-404 && npm run inject-meta",
+    "build": "vite build && npm run copy-404 && npm run inject-meta && npm run generate-seo",
     "preview": "vite preview"
   },
   "dependencies": {

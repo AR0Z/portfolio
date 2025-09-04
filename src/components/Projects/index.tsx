@@ -3,7 +3,7 @@ import "./style.scss";
 import projectsDataRaw from "@/locales/projects.json";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "preact/hooks";
+import { useLayoutEffect } from "preact/hooks";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,71 +24,41 @@ export default function Projects() {
     ? projectsDataRaw
     : [];
 
-  useEffect(() => {
-    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-    const startValue = "top 90%";
-    const endValue = isMobile ? "bottom 10%" : "bottom 80%";
+  useLayoutEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    const x = isMobile ? 5 : 25; 
 
-    const x = isMobile ? -5 : -25;
+    // Batch pour tous les items
+    ScrollTrigger.batch(".Projects__Item", {
+      onEnter: (batch) => {
+        batch.forEach((el, i) => {
+          const index = projectsData.findIndex(
+            (p) =>
+              el.querySelector("h3")?.textContent ===
+              (p.title[lang] || p.title["fr"])
+          );
+          const direction = index % 2 === 0 ? -1 : 1; 
 
-    const oddItems = document.querySelectorAll(
-      ".Projects__Item:nth-child(odd)"
-    );
-    oddItems.forEach((item) => {
-      gsap.fromTo(
-        item,
-        { x: `${x}vw`, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 2,
-          scrollTrigger: {
-            trigger: item,
-            start: startValue,
-            end: endValue,
-            scrub: 1,
-          },
-        }
-      );
-    });
-
-    const evenItems = document.querySelectorAll(
-      ".Projects__Item:nth-child(even)"
-    );
-    evenItems.forEach((item) => {
-      gsap.fromTo(
-        item,
-        { x: `${x * -1}vw`, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 2,
-          scrollTrigger: {
-            trigger: item,
-            start: startValue,
-            end: endValue,
-            scrub: 1,
-          },
-        }
-      );
-    });
-
-    setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 0);
-
-    gsap.from(".Projects__Title", {
-      y: 100,
-      rotateY: 90,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".Projects__Title",
-        start: startValue,
-        end: "bottom top",
-        toggleActions: "play reverse play reverse",
+          gsap.fromTo(
+            el,
+            { x: `${x * direction}vw`, opacity: 0 },
+            {
+              x: 0,
+              opacity: 1,
+              duration: 1.5,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: el,
+                start: "top 80%",
+                end: "bottom bottom",
+              },
+            }
+          );
+        });
       },
     });
+
+    ScrollTrigger.refresh();
   }, [lang]);
 
   return (
@@ -104,15 +74,20 @@ export default function Projects() {
           const imgSrc = images[
             `/src/assets/projects/${project.image}`
           ] as string;
+
           return (
             <div key={project.id} className="Projects__Item">
-              <h3 className={"Projects__Item__Title"}>{project.title[lang]}</h3>
-
+              <h3 className="Projects__Item__Title">
+                {project.title[lang] || project.title["fr"]}
+              </h3>
               <a
                 href={`project/${project.id}`}
-                className={"Projects__Item__Link"}
+                className="Projects__Item__Link"
               >
-                <img src={imgSrc} alt="" />
+                <img
+                  src={imgSrc}
+                  alt={project.title[lang] || project.title["fr"]}
+                />
               </a>
             </div>
           );

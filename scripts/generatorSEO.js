@@ -32,7 +32,7 @@ let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://duchene.dev/</loc>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 `;
@@ -41,7 +41,7 @@ projects.forEach(project => {
   sitemapXml += `
   <url>
     <loc>https://duchene.dev/project/${project.id}</loc>
-    <changefreq>monthly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>`;
 });

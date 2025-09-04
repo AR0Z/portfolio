@@ -32,30 +32,60 @@ export default function About() {
     const splits: any[] = [];
     const animations: any[] = [];
 
-    // About Description
-    const splitAbout = SplitText.create(".About__Description", {
-      type: "words",
-    });
-    splits.push(splitAbout);
-    animations.push(
-      gsap.from(splitAbout.words, {
-        x,
-        opacity: 0,
-        stagger: { amount: 2 },
-        scrollTrigger: {
-          trigger: ".About__Description",
-          start: startValue,
-          end: endValue,
-          toggleActions: "play reverse play reverse",
-        },
-      })
-    );
+    // --- About description ---
+    const aboutEl = document.querySelector(".About__Description");
+    if (aboutEl) {
+      // revert ancien SplitText
+      if ((aboutEl as any)._gsapSplitText)
+        (aboutEl as any)._gsapSplitText.revert();
+      // mettre à jour le texte
+      aboutEl.innerHTML = t("about");
+      const splitAbout = SplitText.create(aboutEl, { type: "words" });
+      splits.push(splitAbout);
 
-    // 🔹 Reset les propriétés pour les éléments SVG et Title
+      animations.push(
+        gsap.from(splitAbout.words, {
+          x,
+          opacity: 0,
+          stagger: { amount: 2 },
+          scrollTrigger: {
+            trigger: aboutEl,
+            start: startValue,
+            end: endValue,
+            toggleActions: "play reverse play reverse",
+          },
+        })
+      );
+    }
+
+    // --- Skills container text ---
+    const skillsTextEl = document.querySelector(".Skills__Container-text");
+    if (skillsTextEl) {
+      if ((skillsTextEl as any)._gsapSplitText)
+        (skillsTextEl as any)._gsapSplitText.revert();
+      skillsTextEl.innerHTML = t("skillsMore");
+      const splitSkills = SplitText.create(skillsTextEl, { type: "words" });
+      splits.push(splitSkills);
+
+      animations.push(
+        gsap.from(splitSkills.words, {
+          y: 100,
+          opacity: 0,
+          stagger: { amount: 0.5 },
+          scrollTrigger: {
+            trigger: skillsTextEl,
+            start: startValue,
+            end: endValue,
+            toggleActions: "play reverse play reverse",
+          },
+        })
+      );
+    }
+
+    // --- SVG & Title animations ---
     gsap.set(".Skills__Container svg", { clearProps: "all" });
     gsap.set(".Skills__Title", { clearProps: "all" });
 
-    // 🔹 Kill les ScrollTriggers ciblant ces éléments
     ScrollTrigger.getAll()
       .filter((st) =>
         st.trigger?.matches(
@@ -64,7 +94,6 @@ export default function About() {
       )
       .forEach((st) => st.kill());
 
-    // Skills Container SVG
     animations.push(
       gsap.from(".Skills__Container svg", {
         y: 100,
@@ -79,7 +108,6 @@ export default function About() {
       })
     );
 
-    // Skills Title
     animations.push(
       gsap.from(".Skills__Title", {
         y: 100,
@@ -95,24 +123,7 @@ export default function About() {
       })
     );
 
-    // Skills Container Text
-    const splitSkills = SplitText.create(".Skills__Container-text");
-    splits.push(splitSkills);
-    animations.push(
-      gsap.from(splitSkills.words, {
-        y: 100,
-        opacity: 0,
-        stagger: { amount: 0.5 },
-        scrollTrigger: {
-          trigger: ".Skills__Container-text",
-          start: startValue,
-          end: endValue,
-          toggleActions: "play reverse play reverse",
-        },
-      })
-    );
-
-    // 🔥 Cleanup complet à la sortie du useEffect
+    // --- Cleanup ---
     return () => {
       animations.forEach((a) => a.kill());
       splits.forEach((s) => s.revert());

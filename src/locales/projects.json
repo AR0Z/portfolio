@@ -19,7 +19,7 @@
       "en": "<p><span class='highlight'>Match IT</span> is a project improved during my internship at <span class='highlight'>Eocene</span>, aimed at enhancing the CRM and ATS systems. The stack includes <span class='highlight'>.NET</span>, <span class='highlight'>Entity Framework Core</span>, <span class='highlight'>MediatR</span> (for the mediator pattern), <span class='highlight'>Blazor</span>, among others.</p><p>In the CRM, several bugs were fixed, such as the display of projects on the client page. A <span class='highlight'>Kanban view</span> was implemented with cards per opportunity to provide clear information and allow changing states by dragging cards.</p><p>An <span class='highlight'>Outbox pattern</span> was set up to send emails: messages are sent to an <span class='highlight'>Azure Service Bus</span>, which ensures delivery even if a service is temporarily unavailable, and triggers an Azure Function to send the emails via a third-party service.</p><p>In the ATS, the candidate process was completed by implementing <span class='highlight'>salary proposals</span>, generating a PDF offer, and sending a link to the file in <span class='highlight'>Azure Blob Storage</span> where the candidate can accept, refuse, or negotiate the offer. Once accepted, an automatic form is sent to the candidate to fill in their information.</p><p>After form submission, it is possible to generate, correct, and send a contract using <span class='highlight'>DocuSign</span> for electronic signatures, with a webhook to update the system on acceptance or refusal. If the offer is signed, the candidate transitions to employee status, and a checklist is opened to guide HR through the necessary actions.</p><p>Additional tasks included implementing a <span class='highlight'>middleware</span> for better error management, informing the front-end of real errors, and finally, deploying the solution to <span class='highlight'>Azure Cloud</span> using <span class='highlight'>Terraform</span>.</p>",
       "fr": "<p><span class='highlight'>Match IT</span> est un projet amélioré durant mon stage chez <span class='highlight'>Eocene</span>, visant à perfectionner les systèmes <span class='highlight'>CRM</span> et <span class='highlight'>ATS</span>. La stack comprend <span class='highlight'>.NET</span>, <span class='highlight'>Entity Framework Core</span>, <span class='highlight'>MediatR</span> (pour le mediator pattern), <span class='highlight'>Blazor</span>, entre autres.</p><p>Dans le CRM, plusieurs bugs ont été corrigés, comme l’affichage des projets sur la page client. Une <span class='highlight'>vue Kanban</span> a été mise en place avec des cartes par opportunité pour afficher les informations clairement et permettre de changer les états en glissant les cartes.</p><p>Un <span class='highlight'>Outbox pattern</span> a été implémenté pour l’envoi des mails : les messages sont envoyés à un <span class='highlight'>Azure Service Bus</span>, qui garantit l’envoi même si un service est temporairement indisponible, et déclenche une Azure Function pour envoyer les emails via un service tiers.</p><p>Dans l’ATS, le processus candidat a été finalisé avec la mise en place des <span class='highlight'>propositions de salaire</span>, la génération d’un PDF de l’offre et l’envoi d’un lien vers le fichier dans <span class='highlight'>Azure Blob Storage</span>, permettant au candidat d’accepter, refuser ou négocier. Une fois accepté, un formulaire automatique est envoyé pour remplir ses informations.</p><p>Après soumission du formulaire, il est possible de générer, corriger et envoyer un contrat avec <span class='highlight'>DocuSign</span> pour la signature électronique, avec un webhook pour notifier le système. Si l’offre est signée, le candidat devient collaborateur, et une checklist est ouverte pour guider les actions RH.</p><p>Des tâches supplémentaires ont inclus la mise en place d’un <span class='highlight'>middleware</span> pour une meilleure gestion des erreurs, afin d’informer le front-end des erreurs réelles, et enfin, une mise en production réalisée sur <span class='highlight'>Azure Cloud</span> avec <span class='highlight'>Terraform</span>.</p>"
     },
-    "seoDesc": "Match IT est un projet de stage chez Eocene visant à améliorer les systèmes CRM et ATS. Il inclut la correction de bugs, une vue Kanban pour les opportunités, l’implémentation du pattern Outbox pour l’envoi d’emails, la génération de PDF d’offres et contrats avec DocuSign, ainsi que le déploiement sur Azure Cloud avec Terraform.",
+    "seoDesc": "Projet réalisé en stage chez Eocene améliorant les systèmes CRM et ATS : correction de bugs, vue Kanban, pattern Outbox pour emails, génération de PDF d’offres et contrats avec DocuSign, déploiement sur Azure avec Terraform",
     "image": "tfe.png"
   },
   {
@@ -118,7 +118,7 @@
       "fr": "<p>Petit projet ayant pour objectif de <span class='highlight'>raccourcir facilement des liens longs</span> et de générer un <span class='highlight'>QR Code</span> pour un partage rapide.</p><p>La <span class='highlight'>V1</span> a été réalisée en <span class='highlight'>PHP</span> avec une gestion basique des liens et redirection instantanée.</p><p>La <span class='highlight'>V2</span> a été refaite avec un front en <span class='highlight'>HTML, CSS, JS</span> et un back en <span class='highlight'>Express (Node.js)</span>, avec mise en place de <span class='highlight'>Docker/Docker Compose</span> pour faciliter le déploiement de la base de données et du backend.</p>",
       "en": "<p>Small project aimed at <span class='highlight'>easily shortening long URLs</span> and generating a <span class='highlight'>QR Code</span> for quick sharing.</p><p><span class='highlight'>V1</span> was built in <span class='highlight'>PHP</span> with basic link management and instant redirection.</p><p><span class='highlight'>V2</span> was rebuilt with a <span class='highlight'>HTML, CSS, JS</span> frontend and an <span class='highlight'>Express (Node.js)</span> backend, with <span class='highlight'>Docker/Docker Compose</span> setup to handle the database and backend deployment.</p>"
     },
-    "seoDesc": "Short URL service developed with modern web technologies.",
+    "seoDesc": "Service de raccourcissement d’URL développé avec des technologies web modernes.",
     "type": {
       "fr": "Projet personnel",
       "en": "Personal Project"
@@ -137,7 +137,7 @@
         "link": "https://github.com/AR0Z/discord-docker-monitor"
       }
     ],
-   "description": {
+    "description": {
       "fr": "<p>Bot Discord permettant de <span class='highlight'>gérer facilement les containers Docker</span> d’un serveur directement depuis Discord.</p><p>Il permet de voir si les containers sont <span class='highlight'>actifs ou arrêtés</span>, depuis combien de temps ils tournent, et de <span class='highlight'>sélectionner un container</span> pour l’<span class='highlight'>arrêter, démarrer ou redémarrer</span>.</p><p>Le bot fournit également la possibilité de <span class='highlight'>consulter les logs</span> de chaque container. Réalisé avec <span class='highlight'>discord.js</span> et <span class='highlight'>dockerode</span>.</p>",
       "en": "<p>Discord bot that allows you to <span class='highlight'>easily manage Docker containers</span> on a server directly from Discord.</p><p>It lets you see if containers are <span class='highlight'>running or stopped</span>, how long they’ve been active, and <span class='highlight'>select a container</span> to <span class='highlight'>stop, start, or restart</span> it.</p><p>The bot also provides the ability to <span class='highlight'>view logs</span> for each container. Built using <span class='highlight'>discord.js</span> and <span class='highlight'>dockerode</span>.</p>"
     },
@@ -147,5 +147,82 @@
       "en": "Personal Project"
     },
     "image": "docker-monitor.png"
+  },
+  {
+    "id": "old-portfolio",
+    "title": {
+      "en": "Old Portfolio",
+      "fr": "Ancien Portfolio"
+    },
+    "source": [
+      {
+        "name": "GitHub",
+        "link": "https://github.com/AR0Z/portfolio-2022/"
+      }
+    ],
+    "description": {
+      "fr": "<p>Ancien portfolio entièrement réalisé en <span class='highlight'>HTML</span>, <span class='highlight'>SCSS</span> et <span class='highlight'>JavaScript</span>. Le projet intègre <span class='highlight'>Aos</span> pour les animations lors du scroll et <span class='highlight'>Flickity</span> pour créer des carrousels interactifs.</p><p>Le design est <span class='highlight'>simple</span>, <span class='highlight'>épuré</span> et met l'accent sur la lisibilité et la fluidité de navigation.</p>",
+      "en": "<p>Old portfolio fully built with <span class='highlight'>HTML</span>, <span class='highlight'>SCSS</span>, and <span class='highlight'>JavaScript</span>. The project uses <span class='highlight'>Aos</span> for scroll animations and <span class='highlight'>Flickity</span> for interactive carousels.</p><p>The design is <span class='highlight'>clean</span>, <span class='highlight'>minimal</span>, and focuses on readability and smooth navigation.</p>"
+    },
+    "seoDesc": "Ancien portfolio réalisé en HTML, SCSS et JavaScript, intégrant Aos pour les animations et Flickity pour les carrousels, avec un design simple et épuré.",
+    "type": {
+      "fr": "Projet personnel",
+      "en": "Personal Project"
+    },
+    "image": "old-portfolio.png"
+  },
+  {
+    "id": "chcs",
+    "title": {
+      "en": "CHCS",
+      "fr": "CHCS"
+    },
+    "collaborator": [
+      {
+        "name": "Calvin",
+        "link": "https://github.com/CalvinNogueira"
+      },
+      {
+        "name": "Quentin",
+        "link": "https://github.com/MarkAsto"
+      }
+    ],
+    "description": {
+      "fr": "<p><span class='highlight'>CHCS</span> est une application web développée pour gérer une salle de sport pendant la période du <span class='highlight'>Covid-19</span>, permettant l’inscription aux créneaux avec un nombre maximum de participants pour respecter le règlement sanitaire.</p><p>Le site est adaptatif et propose différentes fonctionnalités selon le rôle de l’utilisateur :</p><p><span class='highlight'>Membre :</span> accès aux <span class='highlight'>bannières</span>, <span class='highlight'>news datées</span>, <span class='highlight'>règlement intérieur</span>, <span class='highlight'>gestion des droits (RGPD)</span>, <span class='highlight'>formulaire de signalement</span>, réseaux CHCS, CGU et mentions légales, déconnexion.</p><p><span class='highlight'>Membre cotisé :</span> mêmes fonctionnalités que Membre + accès aux <span class='highlight'>créneaux</span> (inscription, désinscription, nom du responsable, places disponibles).</p><p><span class='highlight'>Responsable :</span> gestion des créneaux (création avec durée et nombre max de personnes, suppression si responsable, inscription/désinscription, nom et place disponible), news, règlement, RGPD, formulaire de signalement, réseaux, CGU, mentions légales, déconnexion.</p><p><span class='highlight'>Comité :</span> gestion complète des créneaux (création, suppression, inscription/désinscription de membres, modification), gestion des membres et responsables, ajout de bannières avec priorité et validité, exceptions pour bloquer ou modifier les créneaux, suivi du trafic, paramètres du site, déconnexion.</p><p><span class='highlight'>Maintainer :</span> paramètres de maintenance, bannières priorité max, suivi du trafic, visibilité sur formulaires de signalement, modifications CGU, gestion des membres du comité, déconnexion.</p><p>Technologies utilisées : <span class='highlight'>HTML</span>, <span class='highlight'>CSS</span>, <span class='highlight'>JavaScript</span>, <span class='highlight'>PHP</span>, <span class='highlight'>MySQL</span>.</p>",
+      "en": "<p><span class='highlight'>CHCS</span> is a web application developed to manage a gym during the <span class='highlight'>Covid-19</span> period, allowing registration for time slots with a maximum number of participants to comply with health regulations.</p><p>The site is responsive and offers different features depending on the user role:</p><p><span class='highlight'>Member:</span> access to <span class='highlight'>banners</span>, <span class='highlight'>dated news</span>, <span class='highlight'>internal rules</span>, <span class='highlight'>rights management (GDPR)</span>, <span class='highlight'>report form</span>, CHCS networks, terms of use, legal notice, logout.</p><p><span class='highlight'>Paid Member:</span> same features as Member + access to <span class='highlight'>time slots</span> (registration, cancellation, manager name, available spots).</p><p><span class='highlight'>Manager:</span> manage time slots (create with duration and max participants, delete if responsible, registration/unregistration, manager name and available spots), news, rules, GDPR, report form, networks, terms of use, legal notice, logout.</p><p><span class='highlight'>Committee:</span> full time slot management (create, delete, register/unregister members, modify), manage members and managers, add banners with priority and validity, exceptions to block or modify time slots, site traffic monitoring, site settings, logout.</p><p><span class='highlight'>Maintainer:</span> maintenance settings, top priority banners, traffic monitoring, view report forms, edit terms of use, manage committee members, logout.</p><p>Technologies used: <span class='highlight'>HTML</span>, <span class='highlight'>CSS</span>, <span class='highlight'>JavaScript</span>, <span class='highlight'>PHP</span>, <span class='highlight'>MySQL</span>.</p>"
+    },
+    "seoDesc": "Application web pour gérer une salle de sport pendant le Covid-19, incluant membres, créneaux avec nombre max de participants, bannières et news.",
+    "type": {
+      "fr": "Projet entreprise",
+      "en": "Business Project"
+    },
+    "image": "chcs.png"
+  },
+  {
+    "id": "eric-electricien",
+    "title": {
+      "en": "S.EricElec",
+      "fr": "S.EricElec"
+    },
+    "collaborator": [
+      {
+        "name": "Calvin",
+        "link": "https://github.com/CalvinNogueira"
+      },
+      {
+        "name": "Quentin",
+        "link": "https://github.com/MarkAsto"
+      }
+    ],
+    "description": {
+      "fr": "<p>Site vitrine réalisé en <span class='highlight'>PHP</span>, <span class='highlight'>SCSS</span> et <span class='highlight'>JavaScript</span>, incluant une <span class='highlight'>galerie photo</span> des travaux réalisés, un <span class='highlight'>formulaire de contact</span> avec <span class='highlight'>captcha maison</span>, et un <span class='highlight'>panel administrateur</span> permettant de gérer la galerie, consulter les messages reçus et modifier les informations de contact.</p>",
+      "en": "<p>Showcase website built with <span class='highlight'>PHP</span>, <span class='highlight'>SCSS</span>, and <span class='highlight'>JavaScript</span>, featuring a <span class='highlight'>photo gallery</span> of completed projects, a <span class='highlight'>custom captcha contact form</span>, and an <span class='highlight'>admin panel</span> to manage the gallery, view messages, and update contact details.</p>"
+    },
+    "seoDesc": "Site vitrine pour électricien avec galerie photo, formulaire de contact avec captcha personnalisé et panel administrateur.",
+    "type": {
+      "fr": "Projet entreprise",
+      "en": "Business Project"
+    },
+    "image": "eric-website.png"
   }
 ]
