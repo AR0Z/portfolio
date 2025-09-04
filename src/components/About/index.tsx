@@ -21,75 +21,104 @@ import { SplitText } from "gsap/SplitText";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function About() {
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
 
   useEffect(() => {
     const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-    const startValue = isMobile ? "top 90%" : "top 90%";
-    const endValue = isMobile ? "bottom 0%" : "bottom 10%"; // au lieu de 10% / 80%
+    const startValue = "top 90%";
+    const endValue = isMobile ? "bottom 0%" : "bottom 10%";
     const x = isMobile ? 5 : 100;
-    let split = SplitText.create(".About__Description", {
+
+    const splits: any[] = [];
+    const animations: any[] = [];
+
+    // About Description
+    const splitAbout = SplitText.create(".About__Description", {
       type: "words",
     });
+    splits.push(splitAbout);
+    animations.push(
+      gsap.from(splitAbout.words, {
+        x,
+        opacity: 0,
+        stagger: { amount: 2 },
+        scrollTrigger: {
+          trigger: ".About__Description",
+          start: startValue,
+          end: endValue,
+          toggleActions: "play reverse play reverse",
+        },
+      })
+    );
 
-    gsap.from(split.words, {
-      x: x,
-      opacity: 0,
-      stagger: {
-        amount: 2,
-      },
-      scrollTrigger: {
-        trigger: ".About__Description",
-        start: startValue,
-        end: endValue,
-        toggleActions: "play reverse play reverse", // ↓↓ ↑↑
-      },
-    });
+    // 🔹 Reset les propriétés pour les éléments SVG et Title
+    gsap.set(".Skills__Container svg", { clearProps: "all" });
+    gsap.set(".Skills__Title", { clearProps: "all" });
 
-    gsap.from(".Skills__Container svg", {
-      y: 100,
-      opacity: 0,
-      stagger: {
-        amount: 0.5,
-        from: "random",
-      },
-      scrollTrigger: {
-        trigger: ".Skills__Container",
-        start: startValue,
-        end: endValue,
-        toggleActions: "play reverse play reverse", // ↓↓ ↑↑
-      },
-    });
+    // 🔹 Kill les ScrollTriggers ciblant ces éléments
+    ScrollTrigger.getAll()
+      .filter((st) =>
+        st.trigger?.matches(
+          ".Skills__Container, .Skills__Container svg, .Skills__Title"
+        )
+      )
+      .forEach((st) => st.kill());
 
-    gsap.from(".Skills__Title", {
-      y: 100,
-      rotateY: 90,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".Skills__Title",
-        start: startValue,
-        end: endValue,
-        toggleActions: "play reverse play reverse", // ↓↓ ↑↑
-      },
-    });
+    // Skills Container SVG
+    animations.push(
+      gsap.from(".Skills__Container svg", {
+        y: 100,
+        opacity: 0,
+        stagger: { amount: 0.5, from: "random" },
+        scrollTrigger: {
+          trigger: ".Skills__Container",
+          start: startValue,
+          end: endValue,
+          toggleActions: "play reverse play reverse",
+        },
+      })
+    );
 
-    let text = SplitText.create(".Skills__Container-text");
+    // Skills Title
+    animations.push(
+      gsap.from(".Skills__Title", {
+        y: 100,
+        rotateY: 90,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".Skills__Title",
+          start: startValue,
+          end: endValue,
+          toggleActions: "play reverse play reverse",
+        },
+      })
+    );
 
-    gsap.from(text.words, {
-      y: 100,
-      opacity: 0,
-      stagger: {
-        amount: 0.5,
-      },
-      scrollTrigger: {
-        trigger: ".Skills__Container-text",
-        start: startValue,
-        end: endValue,
-        toggleActions: "play reverse play reverse", // ↓↓ ↑↑
-      },
-    });
-  }, []);
+    // Skills Container Text
+    const splitSkills = SplitText.create(".Skills__Container-text");
+    splits.push(splitSkills);
+    animations.push(
+      gsap.from(splitSkills.words, {
+        y: 100,
+        opacity: 0,
+        stagger: { amount: 0.5 },
+        scrollTrigger: {
+          trigger: ".Skills__Container-text",
+          start: startValue,
+          end: endValue,
+          toggleActions: "play reverse play reverse",
+        },
+      })
+    );
+
+    // 🔥 Cleanup complet à la sortie du useEffect
+    return () => {
+      animations.forEach((a) => a.kill());
+      splits.forEach((s) => s.revert());
+    };
+  }, [lang]);
+
   return (
     <section className="About">
       <p

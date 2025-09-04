@@ -26,21 +26,18 @@ export default function Projects() {
 
   useEffect(() => {
     const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-    const startValue = isMobile ? "top 90%" : "top bottom";
+    const startValue = "top 90%";
     const endValue = isMobile ? "bottom 10%" : "bottom 80%";
 
     const x = isMobile ? -5 : -25;
+
     const oddItems = document.querySelectorAll(
       ".Projects__Item:nth-child(odd)"
     );
-
     oddItems.forEach((item) => {
       gsap.fromTo(
         item,
-        {
-          x: `${x}vw`,
-          opacity: 0,
-        },
+        { x: `${x}vw`, opacity: 0 },
         {
           x: 0,
           opacity: 1,
@@ -50,23 +47,19 @@ export default function Projects() {
             start: startValue,
             end: endValue,
             scrub: 1,
+            markers: true,
           },
         }
       );
     });
 
-    // Idem pour les even si besoin
     const evenItems = document.querySelectorAll(
       ".Projects__Item:nth-child(even)"
     );
-
     evenItems.forEach((item) => {
       gsap.fromTo(
-        item, // départ
-        {
-          x: `${x * -1}vw`,
-          opacity: 0,
-        },
+        item,
+        { x: `${x * -1}vw`, opacity: 0 },
         {
           x: 0,
           opacity: 1,
@@ -76,10 +69,15 @@ export default function Projects() {
             start: startValue,
             end: endValue,
             scrub: 1,
+            markers: true,
           },
         }
       );
     });
+
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 0);
 
     gsap.from(".Projects__Title", {
       y: 100,
@@ -90,10 +88,10 @@ export default function Projects() {
         trigger: ".Projects__Title",
         start: startValue,
         end: "bottom top",
-        toggleActions: "play reverse play reverse", // ↓↓ ↑↑
+        toggleActions: "play reverse play reverse",
       },
     });
-  }, []);
+  }, [lang]);
 
   return (
     <section className="Projects">
