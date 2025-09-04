@@ -17,26 +17,29 @@ import { ParticlesBackground } from "@/components/ParticlesBackground";
 import { Footer } from "@/components/Footer.jsx";
 // context
 import { TranslationProvider } from "@/TranslationContext.jsx";
+import AppWrapper from "./AppWrapper.jsx";
 
 // styles
 import "@/style.scss";
 
 export function App() {
   return (
-    <TranslationProvider>
-      <LocationProvider>
-        <Header />
-        <main>
-          <Router>
-            <Route path="/" component={Home} />
-            <Route path="/project/:id" component={Project} />
-            <Route default component={NotFound} />
-          </Router>
-        </main>
-        <Footer />
-        <ParticlesBackground />
-      </LocationProvider>
-    </TranslationProvider>
+    <AppWrapper>
+      <TranslationProvider>
+        <LocationProvider>
+          <Header />
+          <main>
+            <Router>
+              <Route path="/" component={Home} />
+              <Route path="/project/:id" component={Project} />
+              <Route default component={NotFound} />
+            </Router>
+          </main>
+          <Footer />
+          <ParticlesBackground />
+        </LocationProvider>
+      </TranslationProvider>
+    </AppWrapper>
   );
 }
 

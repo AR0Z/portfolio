@@ -18,8 +18,6 @@ export function Home() {
       <LineSeparator />
       <Suspense fallback={<Loader />}>
         <About />
-      </Suspense>
-      <Suspense fallback={<Loader />}>
         <Projects />
       </Suspense>
       <LineSeparator />
