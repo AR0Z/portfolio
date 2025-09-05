@@ -1,7 +1,7 @@
 @use "../../variables.scss" as *;
 
 .Projects {
-  margin: 200px 280px 50px 280px;
+  margin: 500px 280px 50px 280px;
 
   &__Title {
     font-family: "Poppins-ExtraLight";
@@ -119,11 +119,11 @@
   }
 
   @media (max-width: 1000px) {
-    margin: 100px 220px;
+    margin: 500px 220px;
   }
 
   @media (max-width: 800px) {
-    margin: 100px 40px 100px 40px;
+    margin: 300px 40px 100px 40px;
     &__Title {
       :nth-child(1) {
         transform: rotate(15deg);
@@ -144,6 +144,6 @@
   }
 
   @media (max-width: 600px) {
-    margin: 100px 40px 100px 40px;
+    margin: 300px 40px 100px 40px;
   }
 }

@@ -1,6 +1,8 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useTranslation } from "@/TranslationContext";
 
 export function SocialLinks() {
+  const { t } = useTranslation();
   return (
     <div className="Hero__SocialLinks">
       <a
@@ -10,7 +12,7 @@ export function SocialLinks() {
         className="Link"
       >
         <FaGithub size={24} />
-        <p>visit my GitHub</p>
+        <p>{t("githubHero")}</p>
       </a>
       <a
         href="https://www.linkedin.com/in/germain-duchêne-26215723a/"
@@ -19,7 +21,7 @@ export function SocialLinks() {
         className="Link"
       >
         <FaLinkedin size={24} />
-        <p>visit my LinkedIn</p>
+        <p>{t("linkedinHero")}</p>
       </a>
     </div>
   );
